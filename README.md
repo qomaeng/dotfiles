@@ -5,7 +5,7 @@ It's just my dotfiles
 
 - `ctrlp` opens files fast
 - `nerdtree` an improved file tree view
-- `vim-airline` improved and beautivul vim status line
+- `vim-airline` improved and beautiful vim status line
 - `fugitive` 
 - `syntastic` syntatic detection
 - `tagbar` 
