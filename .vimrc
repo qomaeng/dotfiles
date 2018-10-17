@@ -55,10 +55,10 @@ nmap <F6> :bn<CR>
 "nmap <F8> :mak<enter>
 
 " tabbed windows (command mode)
-nmap <S-h> :tabprev<CR>
-nmap <S-l> :tabnext<CR>
-nmap <S-t> :tabnew<CR>
-nmap <S-c> :tabclose<CR>
+nmap th :tabprev<CR>
+nmap tl :tabnext<CR>
+nmap tt :tabnew<CR>
+nmap tc :tabclose<CR>
 
 "nmap <F12> :!make<enter>
 
