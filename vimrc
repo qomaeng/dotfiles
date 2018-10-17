@@ -1,10 +1,13 @@
+" This line should not be removed as it ensures that various options are
+" properly set to work with the Vim-related packages available in Debian.
+runtime! debian.vim
 set nocompatible
 
 execute pathogen#infect()
 
-syntax on
 filetype indent on
 filetype plugin on
+syntax on
 
 set mouse=a
 
@@ -20,6 +23,7 @@ set formatoptions=cqt
 
 set encoding=utf-8
 
+set background=dark
 colorscheme obsidian
 
 set nowrap
@@ -82,12 +86,8 @@ set numberwidth=5
 set modelines=5
 set modeline
 
-set ai
-set si
-set cindent
-
 " enable current cursor line/column high lighting
-set cursorline
+"set cursorline
 "set cursorcolumn
 
 set hlsearch
@@ -130,4 +130,9 @@ au FileType c,cpp set ts=4
 au FileType c,cpp set sw=4
 " }}}
 " }}}
+
+" Source a global configuration file if available
+if filereadable("/etc/vim/vimrc.local")
+  source /etc/vim/vimrc.local
+endif
 
