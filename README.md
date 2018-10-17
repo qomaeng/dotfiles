@@ -3,6 +3,7 @@ It's just my dotfiles
 
 ### VIM plugins
 
+- `pathogen` manage vim plugins
 - `ctrlp` opens files fast
 - `nerdtree` an improved file tree view
 - `vim-airline` improved and beautiful vim status line
