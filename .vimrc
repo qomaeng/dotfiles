@@ -45,13 +45,14 @@ set fdm=marker
 " set <space> to toggle fold
 nnoremap <space> za
 nmap <F2> :w<enter>
-nmap <F3> :NERDTreeToggle<CR>
+nmap <F3> :<CR>
+nmap <F4> :<CR>
 nmap <C-n> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
+nmap <F5> :TagbarToggle<CR>
 nmap <F9> :q<CR>
 nmap <C-h> :noh<CR>
-nmap <F5> :bp<CR>
-nmap <F6> :bn<CR>
+nmap <F7> :bp<CR>
+nmap <F8> :bn<CR>
 "nmap <F8> :mak<enter>
 
 " tabbed windows (command mode)
@@ -59,6 +60,13 @@ nmap th :tabprev<CR>
 nmap tl :tabnext<CR>
 nmap tt :tabnew<CR>
 nmap tc :tabclose<CR>
+
+" YouCompleteMe command (Vim Plugin)
+nmap ti :YcmCompleter GoToInclude<CR>
+nmap tdf :YcmCompleter GoToDefinition<CR>
+nmap tdc :YcmCompleter GoToDeclaration<CR>
+nmap <F10> :YcmDiags<CR>
+imap <F10> <ESC>:YcmDiags<CR>
 
 "nmap <F12> :!make<enter>
 
@@ -122,6 +130,15 @@ let g:airline_theme='minimalist'
 
 " Plugin: CtrlP {{{2
 let g:ctrlp_show_hidden = 0
+
+" Plugin: YouCompleteMe {{{2
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_key_invoke_completion = '<C-Space>'
+
+let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-split', 'vertical-split', 'new-tab' ]
+
+let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
 
 " SECTION: FileType: {{{1
 " =====================================================================
