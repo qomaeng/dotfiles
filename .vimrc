@@ -63,8 +63,8 @@ nmap tc :tabclose<CR>
 
 " YouCompleteMe command (Vim Plugin)
 nmap ti :YcmCompleter GoToInclude<CR>
-nmap tdf :YcmCompleter GoToDefinition<CR>
-nmap tdc :YcmCompleter GoToDeclaration<CR>
+nmap tf :YcmCompleter GoToDefinition<CR>
+nmap tc :YcmCompleter GoToDeclaration<CR>
 nmap <F10> :YcmDiags<CR>
 imap <F10> <ESC>:YcmDiags<CR>
 
