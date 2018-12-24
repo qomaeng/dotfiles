@@ -1,5 +1,7 @@
 #!/bin/sh
 
+mkdir -p .vim/autoload .vim/bundle
+
 git clone https://github.com/kien/ctrlp.vim ./.vim/bundle/ctrlp.vim
 git clone https://github.com/scrooloose/nerdtree ./.vim/bundle/nerdtree
 git clone https://github.com/vim-airline/vim-airline ./.vim/bundle/vim-airline
