@@ -24,7 +24,7 @@ set formatoptions=cqt
 set encoding=utf-8
 
 set background=dark
-colorscheme obsidian
+colorscheme monokai
 
 set nowrap
 
@@ -139,6 +139,10 @@ let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-spli
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Plugin: vim-monokai
+let g:monokai_term_italic = 1
+let g:monokai_gui_italic = 1
 
 " SECTION: FileType: {{{1
 " =====================================================================
