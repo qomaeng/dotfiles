@@ -9,7 +9,7 @@ filetype indent on
 filetype plugin on
 syntax on
 
-set mouse=a
+"set mouse=a
 
 set backspace=indent,eol,start
 
@@ -24,7 +24,7 @@ set formatoptions=cqt
 set encoding=utf-8
 
 set background=dark
-colorscheme monokai
+colorscheme obsidian
 
 set nowrap
 
