@@ -1,15 +1,34 @@
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
-set nocompatible
+"set nocompatible
 
-execute pathogen#infect()
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-filetype indent on
-filetype plugin on
-syntax on
+" Make sure you use single quotes
+Plug 'arcticicestudio/nord-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar'
+Plug 'junegunn/vim-easy-align'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'scrooloose/nerdtree'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-"set mouse=a
+" Initialize plugin system
+call plug#end()
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
 set backspace=indent,eol,start
 
@@ -23,10 +42,10 @@ set formatoptions=cqt
 
 set encoding=utf-8
 
-set background=dark
-colorscheme obsidian
+"set background=dark
+colorscheme nord
 
-set nowrap
+"set nowrap
 
 " indention/tabstop/shiftwidth
 set tabstop=4
@@ -44,13 +63,15 @@ set fdm=marker
 
 " set <space> to toggle fold
 nnoremap <space> za
+nmap <C-h> :noh<CR>
 nmap <F2> :w<enter>
 nmap <F3> :<CR>
 nmap <F4> :<CR>
+nmap <C-p> :FZF<CR>
 nmap <C-n> :NERDTreeToggle<CR>
 nmap <F5> :TagbarToggle<CR>
 nmap <F9> :q<CR>
-nmap <C-h> :noh<CR>
+nmap <C-F9> :bd<CR>
 nmap <F7> :bp<CR>
 nmap <F8> :bn<CR>
 "nmap <F8> :mak<enter>
@@ -62,11 +83,11 @@ nmap tt :tabnew<CR>
 nmap tc :tabclose<CR>
 
 " YouCompleteMe command (Vim Plugin)
-nmap ti :YcmCompleter GoToInclude<CR>
-nmap tf :YcmCompleter GoToDefinition<CR>
-nmap tc :YcmCompleter GoToDeclaration<CR>
-nmap <F10> :YcmDiags<CR>
-imap <F10> <ESC>:YcmDiags<CR>
+"nmap ti :YcmCompleter GoToInclude<CR>
+"nmap tf :YcmCompleter GoToDefinition<CR>
+"nmap tc :YcmCompleter GoToDeclaration<CR>
+"nmap <F10> :YcmDiags<CR>
+"imap <F10> <ESC>:YcmDiags<CR>
 
 "nmap <F12> :!make<enter>
 
@@ -78,7 +99,7 @@ imap jj <ESC>
 
 " search (incremental, case insensitive except explicit caps)
 set incsearch
-"set ignorecase
+set ignorecase
 set smartcase
 
 " we're on big screens, and I need a vertical scroll offset for better 
@@ -111,46 +132,10 @@ let c_no_nocurly_error=1
 "  n... :  where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.viminfo
 
-let NERDTreeIgnore = [ '\.o$', 'cmake_install.*', 'CMakeFiles', 'CMakeCache.*' ]
-
 if has("autocmd")
   " open file at last read position
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
-" SECTION: Vim plugin {{{1
-" =====================================================================
-" Plugin: Airline {{{2
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'default'
-let g:airline_powerline_fonts = 1
-let g:airline_theme='minimalist'
-
-" Plugin: CtrlP {{{2
-let g:ctrlp_show_hidden = 0
-
-" Plugin: YouCompleteMe {{{2
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_key_invoke_completion = '<C-Space>'
-
-let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-split', 'vertical-split', 'new-tab' ]
-
-let g:ycm_autoclose_preview_window_after_insertion = 1
-"let g:ycm_autoclose_preview_window_after_completion = 1
-
-" Plugin: vim-monokai
-let g:monokai_term_italic = 1
-let g:monokai_gui_italic = 1
-
-" SECTION: FileType: {{{1
-" =====================================================================
-" FileType: C/C++ {{{2
-au FileType c,cpp set ts=4
-au FileType c,cpp set sw=4
-" }}}
-" }}}
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
