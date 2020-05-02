@@ -13,5 +13,9 @@ It's just my dotfiles
 
 1. cp -r .vimrc .vim ~/
 2. vim
-2-1. :PlugInstall
-
+* :PlugInstall
+3. vim ~/.bashrc
+    # shell color theme
+    if [ -f ~/.dir_colors ]; then
+        eval $(dircolors ~/.dir_colors)
+    fi
