@@ -38,7 +38,7 @@ set laststatus=2
 set colorcolumn=110
 set textwidth=100
 set wrapmargin=0
-set formatoptions=cqt
+set formatoptions=cq
 
 set encoding=utf-8
 
