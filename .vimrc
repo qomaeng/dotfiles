@@ -53,6 +53,7 @@ augroup FileTypeSpecificAutocommands
   autocmd FileType json setlocal shiftwidth=4 tabstop=4 
   autocmd FileType java setlocal shiftwidth=4 tabstop=4 
   autocmd FileType html setlocal shiftwidth=2 tabstop=2 
+  autocmd FileType tf   setlocal shiftwidth=2 tabstop=2 
 augroup END
 
 set tabstop=4
@@ -60,8 +61,8 @@ set shiftwidth=4
 set expandtab
 set smarttab
 
-"set ai
-"set smartindent
+set ai
+set smartindent
 
 " enable folding
 set foldenable
