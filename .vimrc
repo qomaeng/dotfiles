@@ -18,6 +18,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'arcticicestudio/nord-vim'
 
 " Initialize plugin system
 call plug#end()
