@@ -19,3 +19,9 @@ It's just my dotfiles
     if [ -f ~/.dir_colors ]; then
         eval $(dircolors ~/.dir_colors)
     fi
+
+### Install Gnome Terminal theme nord
+git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
+cd nord-gnome-terminal/src
+./nord.sh
+
