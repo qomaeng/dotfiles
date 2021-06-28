@@ -18,7 +18,6 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'arcticicestudio/nord-vim'
 
 " Initialize plugin system
 call plug#end()
@@ -30,9 +29,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
-
-# Directory colors
-test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
 set backspace=indent,eol,start
 
