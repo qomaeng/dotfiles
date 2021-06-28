@@ -31,6 +31,9 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
+# Directory colors
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+
 set backspace=indent,eol,start
 
 set laststatus=2
