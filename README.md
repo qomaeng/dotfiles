@@ -16,9 +16,7 @@ It's just my dotfiles
 * :PlugInstall
 3. vim ~/.bashrc
     # shell color theme
-    if [ -f ~/.dir_colors ]; then
-        eval $(dircolors ~/.dir_colors)
-    fi
+    test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
 ### Install Gnome Terminal theme nord
 git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
