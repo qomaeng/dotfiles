@@ -14,8 +14,8 @@ It's just my dotfiles
 1. cp -r .vimrc .vim ~/
 2. vim
 * :PlugInstall
-3. vim ~/.bashrc
-    # shell color theme
-    if [ -f ~/.dir_colors ]; then
-        eval $(dircolors ~/.dir_colors)
-    fi
+
+### Install Gnome Terminal theme nord
+git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
+cd nord-gnome-terminal/src && ./nord.sh
+
