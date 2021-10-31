@@ -1,34 +1,26 @@
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
-runtime! debian.vim
+"runtime! debian.vim
 "set nocompatible
-
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
+"
 call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
 Plug 'arcticicestudio/nord-vim'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-easy-align'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
 Plug 'scrooloose/nerdtree'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-" Initialize plugin system
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-l>"
-let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
 set backspace=indent,eol,start
 
@@ -47,13 +39,16 @@ colorscheme nord
 
 "set nowrap
 
+syntax enable
+filetype plugin indent on
+
 " indention/tabstop/shiftwidth
 augroup FileTypeSpecificAutocommands
-  autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 
-  autocmd FileType json setlocal shiftwidth=4 tabstop=4 
-  autocmd FileType java setlocal shiftwidth=4 tabstop=4 
-  autocmd FileType html setlocal shiftwidth=2 tabstop=2 
-  autocmd FileType tf   setlocal shiftwidth=2 tabstop=2 
+  autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+  autocmd FileType json setlocal shiftwidth=4 tabstop=4
+  autocmd FileType java setlocal shiftwidth=4 tabstop=4
+  autocmd FileType html setlocal shiftwidth=2 tabstop=2
+  autocmd FileType tf   setlocal shiftwidth=2 tabstop=2
 augroup END
 
 set tabstop=4
@@ -70,48 +65,12 @@ set foldenable
 set fdm=marker
 "set fdm=syntax
 
-" set <space> to toggle fold
-nnoremap <space> za
-nmap <C-h> :noh<CR>
-nmap <F2> :w<enter>
-nmap <F3> :<CR>
-nmap <F4> :<CR>
-nmap <C-p> :FZF<CR>
-nmap <C-n> :NERDTreeToggle<CR>
-nmap <F5> :TagbarToggle<CR>
-nmap <F9> :q<CR>
-nmap <C-F9> :bd<CR>
-nmap <F7> :bp<CR>
-nmap <F8> :bn<CR>
-"nmap <F8> :mak<enter>
-
-" tabbed windows (command mode)
-nmap th :tabprev<CR>
-nmap tl :tabnext<CR>
-nmap tt :tabnew<CR>
-nmap tc :tabclose<CR>
-
-" YouCompleteMe command (Vim Plugin)
-"nmap ti :YcmCompleter GoToInclude<CR>
-"nmap tf :YcmCompleter GoToDefinition<CR>
-"nmap tc :YcmCompleter GoToDeclaration<CR>
-"nmap <F10> :YcmDiags<CR>
-"imap <F10> <ESC>:YcmDiags<CR>
-
-"nmap <F12> :!make<enter>
-
-" function shortcuts (insert mode)
-imap <F2> <ESC>:w<CR>a
-imap <F9> <ESC>:q<CR>
-
-imap jj <ESC>
-
 " search (incremental, case insensitive except explicit caps)
 set incsearch
 set ignorecase
 set smartcase
 
-" we're on big screens, and I need a vertical scroll offset for better 
+" we're on big screens, and I need a vertical scroll offset for better
 " readability
 set scrolloff=4
 set sidescrolloff=15
@@ -130,8 +89,31 @@ set modeline
 
 set hlsearch
 
-" C++11 syntax highlighting fix (lamdas and initializers)
-let c_no_nocurly_error=1
+" function shortcuts (insert mode)
+imap <F2> <ESC>:w<CR>a
+imap <F9> <ESC>:q<CR>
+imap jj <ESC>
+
+" tabbed windows (command mode)
+nnoremap <silent> <F2>    :w<enter>
+nnoremap <silent> <F3>    :<CR>
+nnoremap <silent> <F4>    :<CR>
+nnoremap <silent> <F5>    :<CR>
+nnoremap <silent> <F7>    :bp<CR>
+nnoremap <silent> <F8>    :bn<CR>
+nnoremap <silent> <F9>    :q<CR>
+nnoremap <silent> <C-F9>  :bd<CR>
+"nnoremap <silent> <F12> :!make<enter>
+
+nnoremap <silent> <space> za
+nnoremap <silent> <C-h>   :noh<CR>
+nnoremap <silent> <C-n>   :NERDTreeToggle<CR>
+nnoremap <silent> <C-p>   :FZF<CR>
+
+nnoremap <silent> th :tabprev<CR>
+nnoremap <silent> tl :tabnext<CR>
+nnoremap <silent> tt :tabnew<CR>
+nnoremap <silent> tc :tabclose<CR>
 
 " Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 10 previously edited files
