@@ -1,3 +1,9 @@
+" Don't try to be vi compatible
+set nocompatible
+
+" Helps force plugins to load correctly when it is turned back on below
+filetype off
+
 call plug#begin('~/.config/nvim/plugged')
 Plug 'arcticicestudio/nord-vim'
 
@@ -27,79 +33,85 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
+" Turn on syntax highlighting
+syntax on
+
+" For plugins to load correctly
+filetype plugin indent on
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
+" Tell vim to remember certain things when we exit
+"  '10  :  marks will be remembered for up to 10 previously edited files
+"  "100 :  will save up to 100 lines for each register
+"  :20  :  up to 20 lines of command-line history will be remembered
+"  %    :  saves and restores the buffer list
+"  n... :  where to save the viminfo files
+set viminfo='10,\"100,:20,%,n~/.nviminfo
+
 set updatetime=100
 set completeopt=menu,menuone,noselect
 
-set backspace=indent,eol,start
+" Color
+set t_Co=256
+set background=dark
+colorscheme nord
 
+" Encoding
+set encoding=utf-8
+
+" Status bar
 set laststatus=2
 "set statusline=%f\ %l:%c\ [offset:\ %{line2byte(line('.'))-1+col('.')-1}]\ hex:\ 0x%02B
 
-set colorcolumn=110
-set textwidth=100
-set wrapmargin=0
-set formatoptions=cq
+"  Security
+set nomodeline
+set modelines=0
 
-set encoding=utf-8
-
-"set background=dark
-colorscheme nord
-
-"set nowrap
-
-syntax enable
-filetype plugin indent on
-
-" indention/tabstop/shiftwidth
-augroup FileTypeSpecificAutocommands
-  autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
-  autocmd FileType json setlocal shiftwidth=4 tabstop=4
-  autocmd FileType java setlocal shiftwidth=4 tabstop=4
-  autocmd FileType html setlocal shiftwidth=2 tabstop=2
-  autocmd FileType tf   setlocal shiftwidth=2 tabstop=2
-augroup END
-
-"set tabstop=4
-"set shiftwidth=4
+" Whitespace
+set wrap
+set textwidth=80
+set colorcolumn=80
+set formatoptions=tcqrn1
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set smarttab
 
-set ai
-set smartindent
+" Line number
+set nu
+"set numberwidth=5
+
+" Show file status
+set ruler
+
+" Cursor motion
+"set cursorline
+"set cursorcolumn
+set scrolloff=3
+set sidescrolloff=15
+set sidescroll=1
+set backspace=indent,eol,start
+
+" Last line
+set showmode
+set showcmd
+
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
 
 " enable folding
 set foldenable
 "set fdm=indent
 set fdm=marker
 "set fdm=syntax
-
-" search (incremental, case insensitive except explicit caps)
-set incsearch
-set ignorecase
-set smartcase
-
-" we're on big screens, and I need a vertical scroll offset for better
-" readability
-set scrolloff=4
-set sidescrolloff=15
-set sidescroll=1
-
-" line numbering to take up to 5 spaces
-set nu
-set numberwidth=5
-
-set modelines=5
-set modeline
-
-" enable current cursor line/column high lighting
-"set cursorline
-"set cursorcolumn
-
-set hlsearch
 
 " function shortcuts (insert mode)
 imap <F2> <ESC>:w<CR>a
@@ -243,14 +255,6 @@ lua << EOF
     })
   })
 EOF
-
-" Tell vim to remember certain things when we exit
-"  '10  :  marks will be remembered for up to 10 previously edited files
-"  "100 :  will save up to 100 lines for each register
-"  :20  :  up to 20 lines of command-line history will be remembered
-"  %    :  saves and restores the buffer list
-"  n... :  where to save the viminfo files
-set viminfo='10,\"100,:20,%,n~/.nviminfo
 
 if has("autocmd")
   " open file at last read position
