@@ -1,25 +1,32 @@
-It's just my dotfiles
+# Dotfiles
 
+## Shell
 
-## VIM plugins
+1. vi ~/.zshrc
+```sh
+# shell color theme
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+```
 
-- `fzf` opens files fast
-- `nerdtree` an improved file tree view
-- `vim-airline` improved and beautiful vim status line
-- `vim-airline-themes` 
-- `tagbar` 
+## Vi
 
-### Vim Plugins Install Guides
-
-1. cp -r .vimrc .vim ~/
+1. cp -r .vimrc .vim .config ~/
 2. vim
-* :PlugInstall
-3. vim ~/.bashrc
-    # shell color theme
-    test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+```vi
+:PlugInstall
+```
+3. nvim
+```vi
+:PlugInstall
+```
 
-### Install Gnome Terminal theme nord
+## Gnome Terminal
+
+### Theme
+
+```sh
 git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
 cd nord-gnome-terminal/src
 ./nord.sh
+```
 
