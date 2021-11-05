@@ -18,7 +18,7 @@
 ### Zsh
 
 ```sh
-$ cp ./zsh/* ~
+$ cp -r ./zsh/. ~
 ```
 
 ### VIM
