@@ -1,23 +1,32 @@
 # Dotfiles
 
-## Shell
+## Requirementes
+- cc
+- git
+- bash
+- vim
+- [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep): 'grep' alternative(fast)
+- [sharkdp/fd](https://github.com/sharkdp/fd): 'find' alternative(fast)
+- [bat](https://github.com/sharkdp/bat): 'cat' alternative(fast, syntax highlight, git integration)
+- [fzf](https://github.com/junegunn/fzf): A general-purpose command-line fuzzy finder
+- [zsh](https://www.zsh.org/): A improved tab completion and globbing shell
+- [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh): A framework for managing zsh config
 
-1. vi ~/.zshrc
+
+## Setups
+
+### Zsh
+
 ```sh
-# shell color theme
-test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+$ cp ./zsh/.zshrc ~
+$ cp ./zsh/.dir_colors ~
 ```
 
-## Vi
+### VIM
 
-1. cp -r .vimrc .vim .config ~/
-2. vim
-```vi
-:PlugInstall
-```
-3. nvim
-```vi
-:PlugInstall
+```sh
+$ cp ./vim/.vimrc ~
+$ cp -r ./vim/.vim ~
 ```
 
 ## Gnome Terminal
@@ -25,8 +34,9 @@ test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 ### Theme
 
 ```sh
-git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
-cd nord-gnome-terminal/src
-./nord.sh
+$ cd <folder_to_clone_git>
+$ git clone --depth 1 https://github.com/arcticicestudio/nord-gnome-terminal.git
+$ cd nord-gnome-terminal/src
+$ ./nord.sh
 ```
 
