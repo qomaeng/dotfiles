@@ -32,7 +32,6 @@ zstyle ':omz:update' frequency 13
 plugins=(
   asdf
   fzf
-  zsh-autosuggestions
 )
 
 # }}} Pre Settups; oh-my-zsh
@@ -49,9 +48,6 @@ plugins=(
 
 # bindkey as emac
 bindkey -e
-
-# bind CTRL + SPACE to accept autosuggest (zsh-autosuggestions)
-bindkey '^ ' autosuggest-accept
 
 # disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon

@@ -8,7 +8,6 @@ colorscheme nord
 
 set wildmenu
 set wildmode=longest:list
-"set wildoptions=pum
 set completeopt=menu,menuone,noselect
 
 set noshowmode
