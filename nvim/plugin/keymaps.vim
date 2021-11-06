@@ -25,7 +25,6 @@ nnoremap <silent> <leader>mt :make t<CR>
 
 nnoremap <silent> [b :bp<CR>
 nnoremap <silent> ]b :bn<CR>
-"nnoremap <silent> bq :bd<CR>
 
 nnoremap <silent> tt :tabnew<CR>
 nnoremap <silent> tq :tabclose<CR>

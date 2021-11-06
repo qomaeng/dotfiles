@@ -1,0 +1,3 @@
+~/.asdf https://github.com/asdf-vm/asdf.git v0.8.1
+~/.oh-my-zsh/custom/plugins/zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions master
+
