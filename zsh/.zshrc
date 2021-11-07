@@ -1,8 +1,5 @@
-# ####################################################################
-# Pre Settups {{{
-
 # --------------------------------------------------------------------
-# Pre Settups; oh-my-zsh {{{
+# Pre Setups; oh-my-zsh
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -21,10 +18,6 @@ zstyle ':omz:update' frequency 13
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# HIST_STAMPS="mm/dd/yyyy"
-
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -34,17 +27,8 @@ plugins=(
   fzf
 )
 
-# }}} Pre Settups; oh-my-zsh
 # --------------------------------------------------------------------
-
-# }}} Pre Settups
-# ####################################################################
-
-# ####################################################################
-# Options {{{
-
-# --------------------------------------------------------------------
-# Options; keys {{{
+# Options; keys
 
 # bindkey as emac
 bindkey -e
@@ -52,37 +36,22 @@ bindkey -e
 # disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon
 
-# }}} Options; keys
 # --------------------------------------------------------------------
-
-# }}} Options
-# ####################################################################
-
-# ####################################################################
-# Env {{{
-
-# --------------------------------------------------------------------
-# Env; Global {{{
+# Env; Global
 
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export EDITOR=vim
-
-# }}} Env; Global
-# --------------------------------------------------------------------
+export EDITOR=nvim
 
 # --------------------------------------------------------------------
-# Env; golang {{{
+# Env; golang
 
 [ -n "$GOROOT" ] && export PATH=$GOROOT/bin:$PATH
 export PATH=${GOPATH:-~/go/bin}:$PATH
 
-# }}} Env; golang
 # --------------------------------------------------------------------
-
-# --------------------------------------------------------------------
-# Env; fzf {{{
+# Env; fzf
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --column --line-number --no-heading --smart-case --glob "!.git/*"'
 export FZF_DEFAULT_OPTS='--reverse --cycle --height=40%'
@@ -91,11 +60,8 @@ export FZF_CTRL_T_OPTS=$FZF_DEFAULT_OPTS
 export FZF_ALT_T_COMMAND=$FZF_DEFAULT_COMMAND
 export FZF_ALT_T_OPTS=$FZF_DEFAULT_OPTS
 
-# }}} Env; fzf
 # --------------------------------------------------------------------
-
-# --------------------------------------------------------------------
-# Env; ibus-hangul {{{
+# Env; ibus-hangul
 
 if [[ "$OSTYPE" = *"linux-gnu" ]]; then
   export GTK_IM_MODULE=ibus
@@ -103,44 +69,32 @@ if [[ "$OSTYPE" = *"linux-gnu" ]]; then
   export QT_IM_MODULE=ibus
 fi
 
-# }}} Env; ibus-hangul
 # --------------------------------------------------------------------
-
-# }}} Env
-# ####################################################################
-
-# ####################################################################
-# Prompt {{{
-
-# --------------------------------------------------------------------
-# Prompt; zsh {{{
+# Prompt; zsh
 
 source $ZSH/oh-my-zsh.sh
 
-autoload -Uz compinit promptinit
+autoload -Uz compinit
 compinit
-promptinit
-prompt pure
 zstyle ':completion:*' menu select
 
-# }}} Prompt; zsh
 # --------------------------------------------------------------------
+# Prompt; Colors
 
-# --------------------------------------------------------------------
-# Prompt; Colors {{{
+# pure theme
+fpath+=$HOME/.zsh/pure
 
+autoload -U promptinit
+promptinit
+prompt pure
+
+# dir colors
 #if [ -r "~/.dir_colors" ]; then
 #  eval $(dircolors ~/.dir_colors)
 #fi
 
-# }}} Prompt; Colors
 # --------------------------------------------------------------------
-
-# }}} Prompt
-# ####################################################################
-
-# ####################################################################
-# Aliases {{{
+# Aliases
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -157,7 +111,4 @@ alias vim=$EDITOR
 alias bat='bat --theme="base16"'
 alias ssh='TERM="xterm-256color" ssh'
 alias tmux='tmux -2'
-
-# }}} Aliases
-# ####################################################################
 

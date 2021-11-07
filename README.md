@@ -27,11 +27,17 @@ $ ln -sr zsh/.zshrc -t ~
 $ ln -sr zsh/.dir_colors -t ~
 ```
 
-### VIM
+### Vim
 
 ```sh
-$ ln -sr vim -T ~/.vim
+$ ln -sr vim/.vim -T ~/.vim
 $ ln -sr vim/.vimrc  -t ~
+```
+
+### Nvim
+
+```sh
+$ ln -sr nvim -t ~/.config/
 ```
 
 ### asdf
@@ -52,6 +58,7 @@ $ ln -sr tmux/.tmux.conf -t ~
 ```sh
 $ ./script/install_tools.sh
 $ ./script/install_asdf_plugins.sh
+$ asdf install
 $ ./script/install_lsp_servers.sh
 $ ./script/install_vim_plugins.sh
 $ ./script/install_nvim_plugins.sh
