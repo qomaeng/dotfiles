@@ -42,7 +42,6 @@ return require'packer'.startup({function()
   --use {'hrsh7th/cmp-vsnip'}
   --use {'hrsh7th/vim-vsnip'}
   --use {'nvim-lua/popup.nvim'}
-  --use {'nvim-lua/plenary.nvim'}
   --use {'mfussenegger/nvim-dap'}
 
   --use {'simrat39/rust-tools.nvim', ft = {'rust'}}

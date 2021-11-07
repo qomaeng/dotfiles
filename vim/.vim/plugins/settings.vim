@@ -1,6 +1,3 @@
-set encoding=utf-8
-let mapleader=' '
-
 " Color
 set t_Co=256
 set background=dark
