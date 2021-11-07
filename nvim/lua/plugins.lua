@@ -7,14 +7,23 @@ vim.cmd([[
 
 return require'packer'.startup({function()
   -- Package Manager
-  use {"wbthomason/packer.nvim"}
+  use {'wbthomason/packer.nvim'}
 
-  -- Theme
+  -- Colorscheme
   use {'arcticicestudio/nord-vim', opt = true}
 
-  -- File Manager
+  use {'nvim-treesitter/nvim-treesitter'}
+
+  -- A lua fork of vim-devicons
+  use {'kyazdani42/nvim-web-devicons'}
+
   use {'scrooloose/nerdtree', cmd = {'NERDTree*'}}
+  use {'majutsushi/tagbar', cmd = {'Tagbar*'}}
+
+  -- A highly extendable fuzzy finder
   use {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}}
+  -- FZF sorter for telescope written in c
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Git
   use {'tpope/vim-fugitive'}
@@ -23,14 +32,7 @@ return require'packer'.startup({function()
   -- LSP(Language Server Protocol)
   use {'neovim/nvim-lspconfig'}
 
-  -- Programming Language
   use {'rust-lang/rust.vim', ft = {'rust'}}
-
-  -- Programming Tools
-  use {'nvim-treesitter/nvim-treesitter'}
-  use {'majutsushi/tagbar', cmd = {'Tagbar*'}}
-
-  use {'nvim-telescope/telescope.nvim'}
 
   --use {'hrsh7th/cmp-nvim-lsp'}
   --use {'hrsh7th/cmp-buffer'}

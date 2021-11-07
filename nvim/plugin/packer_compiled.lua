@@ -74,53 +74,74 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/home/qo/.local/share/nvim/site/pack/packer/opt/nerdtree"
+    path = "/home/qo/.local/share/nvim/site/pack/packer/opt/nerdtree",
+    url = "https://github.com/scrooloose/nerdtree"
   },
   ["nord-vim"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/home/qo/.local/share/nvim/site/pack/packer/opt/nord-vim"
+    path = "/home/qo/.local/share/nvim/site/pack/packer/opt/nord-vim",
+    url = "https://github.com/arcticicestudio/nord-vim"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/qo/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/qo/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/qo/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/qo/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/qo/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/qo/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/qo/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/qo/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/home/qo/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["rust.vim"] = {
     loaded = false,
     needs_bufread = true,
     only_cond = false,
-    path = "/home/qo/.local/share/nvim/site/pack/packer/opt/rust.vim"
+    path = "/home/qo/.local/share/nvim/site/pack/packer/opt/rust.vim",
+    url = "https://github.com/rust-lang/rust.vim"
   },
   tagbar = {
     commands = { "Tagbar*" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/home/qo/.local/share/nvim/site/pack/packer/opt/tagbar"
+    path = "/home/qo/.local/share/nvim/site/pack/packer/opt/tagbar",
+    url = "https://github.com/majutsushi/tagbar"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/qo/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/qo/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/home/qo/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/home/qo/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+    path = "/home/qo/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-gitgutter"] = {
     loaded = true,
-    path = "/home/qo/.local/share/nvim/site/pack/packer/start/vim-gitgutter"
+    path = "/home/qo/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    url = "https://github.com/airblade/vim-gitgutter"
   }
 }
 

@@ -1,15 +1,15 @@
 #!/bin/sh
 
 declare -a plugins=(
+  awscli
+  golang
+  k9s
+  kubectl
+  nodejs
   python
   rust
-  golang
-  nodejs
-  yarn
-  awscli
-  kubectl
-  k9s
   terraform
+  yarn
 )
 
 printf ":: Installing asdf plugins...\n"

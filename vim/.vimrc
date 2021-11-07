@@ -31,6 +31,7 @@ source ~/.vim/plugins/tagbar.vim
 source ~/.vim/plugins/vim-airline.vim
 source ~/.vim/plugins/nerdtree.vim
 source ~/.vim/plugins/vim-lsp.vim
+source ~/.vim/plugins/vim-gitgutter.vim
 source ~/.vim/plugins/asyncomplete.vim
 
 " open file at last read position

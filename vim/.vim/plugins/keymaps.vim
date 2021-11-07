@@ -24,9 +24,9 @@ nnoremap <silent> <leader>mt :make t<CR>
 nnoremap <silent> [b :bp<CR>
 nnoremap <silent> ]b :bn<CR>
 
-nnoremap <silent> tt :tabnew<CR>
-nnoremap <silent> [t :tabprev<CR>
-nnoremap <silent> ]t :tabnext<CR>
+nnoremap <silent> <leader> tt :tabnew<CR>
+nnoremap <silent> [t          :tabprev<CR>
+nnoremap <silent> ]t          :tabnext<CR>
 
 nnoremap <silent> <C-h> :noh<CR>
 nnoremap <silent> <C-k> :m .-2<CR>==

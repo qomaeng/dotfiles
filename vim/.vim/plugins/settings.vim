@@ -7,7 +7,7 @@ set background=dark
 colorscheme nord
 
 set wildmenu
-set wildmode=longest:list
+set wildmode=longest:full
 set completeopt=menu,menuone,noselect
 
 set noshowmode

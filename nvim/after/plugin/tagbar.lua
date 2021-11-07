@@ -1,2 +1,6 @@
-vim.api.nvim_buf_set_keymap(0, 'n', 'tb', ':TagbarToggle<CR>', { noremap = true, silent = true })
+local plugin = 'tagbar'
+
+if packer_plugins[plugin] then
+  vim.cmd([[nnoremap <C-t> :TagbarToggle<CR>]])
+end
 

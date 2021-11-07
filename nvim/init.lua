@@ -5,6 +5,5 @@
 -- leader.
 vim.g.mapleader = ' '
 
-require('bootstrap')
 require('plugins')
 
