@@ -1,11 +1,8 @@
-local plugin = 'telescope.nvim'
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
 
-if packer_plugins[plugin] then
-  vim.cmd([[
-    nnoremap <leader>ff <cmd>Telescope find_files<cr>
-    nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-    nnoremap <leader>fb <cmd>Telescope buffers<cr>
-    nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-  ]])
-end
+map('n', '<leader>ff', '<CMD>Telescope find_files<CR>', opts)
+map('n', '<leader>fg', '<CMD>Telescope live_grep<CR>', opts)
+map('n', '<leader>fb', '<CMD>Telescope buffers<CR>', opts)
+map('n', '<leader>fh', '<CMD>Telescope help_tags<CR>', opts)
 

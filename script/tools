@@ -1,4 +1,5 @@
+~/.oh-my-zsh/custom/plugins/zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions.git master
+~/.zsh/pure https://github.com/sindresorhus/pure.git main
 ~/.asdf https://github.com/asdf-vm/asdf.git v0.8.1
 ~/.local/share/nvim/site/pack/packer/start/packer.nvim https://github.com/wbthomason/packer.nvim master
-~/.zsh/pure https://github.com/sindresorhus/pure.git main
 

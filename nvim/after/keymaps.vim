@@ -36,3 +36,7 @@ nnoremap <silent> <C-j> :m .+1<CR>==
 xnoremap <silent> <C-k> :m '<-2<CR>gv=gv
 xnoremap <silent> <C-j> :m '>+1<CR>gv=gv
 
+" Disable Vim built-in autocomplete
+inoremap <c-n> <nop>
+inoremap <c-p> <nop>
+

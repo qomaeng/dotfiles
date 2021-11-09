@@ -6,6 +6,7 @@ colorscheme nord
 set wildmenu
 set wildmode=longest:full
 set completeopt=menu,menuone,noselect
+set signcolumn=yes
 
 set noshowmode
 set showcmd
@@ -40,8 +41,7 @@ set showbreak=\ \ \  " Make it so that long lines wrap smartly
 set linebreak
 
 " Fold
-set foldmethod=marker
-set foldlevel=0
+set foldmethod=syntax
 set foldlevelstart=99 " always start editing with all folds closed (value zero), some folds closed (one) or no folds closed (99).
 set modelines=0
 

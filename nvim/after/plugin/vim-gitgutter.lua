@@ -1,11 +1,7 @@
-local plugin = 'vim-gitgutter'
+local map = vim.api.nvim_set_keymap
+local opts = { silent = true }
 
-if packer_plugins[plugin] then
-  vim.cmd([[
-    nmap ghs <Plug>(GitGutterStageHunk)
-    nmap ghu <Plug>(GitGutterUndoHunk)
-    nmap ghp <Plug>(GitGutterPreviewHunk)
-  ]])
-end
-
+map('n', 'ghs', '<Plug>(GitGutterStageHunk)', opts)
+map('n', 'ghu', '<Plug>(GitGutterUndoHunk)', opts)
+map('n', 'ghp', '<Plug>(GitGutterPreviewHunk)', opts)
 

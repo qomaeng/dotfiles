@@ -10,6 +10,7 @@ opt.pumblend = 17
 opt.wildmode = 'longest:full'
 opt.wildoptions = 'pum'
 opt.completeopt = {'menu', 'menuone', 'noselect'}
+opt.signcolumn = 'yes'
 
 opt.showmode = false
 opt.showcmd = true
@@ -44,8 +45,7 @@ opt.breakindent = true
 opt.showbreak = string.rep(' ', 3) -- Make it so that long lines wrap smartly
 opt.linebreak = true
 
-opt.foldmethod = 'marker'
-opt.foldlevel = 0
+opt.foldmethod = 'syntax'
 opt.foldlevelstart = 99 -- always start editing with all folds closed (value zero), some folds closed (one) or no folds closed (99).
 opt.modelines = 0
 

@@ -1,6 +1,5 @@
-local plugin = 'tagbar'
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
 
-if packer_plugins[plugin] then
-  vim.cmd([[nnoremap <C-t> :TagbarToggle<CR>]])
-end
+map('n', '<C-t>', ':TagbarToggle<CR>', opts)
 

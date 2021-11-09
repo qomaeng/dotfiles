@@ -26,7 +26,15 @@ zstyle ':omz:update' frequency 13
 plugins=(
   asdf
   fzf
+  zsh-autosuggestions
+
+  rustup
+  cargo
+
+  terraform
 )
+
+source $ZSH/oh-my-zsh.sh
 
 ######################################################################
 # Options; keys
@@ -35,24 +43,20 @@ plugins=(
 # bindkey as emac
 bindkey -e
 
-# disable CTRL-S and CTRL-Q
+# disable software flow control XOFF(CTRL-S) and XON(CTRL-Q)
+# This lock key event process when i press CTRL-S mistakenly in VIM.
 [[ $- =~ i ]] && stty -ixoff -ixon
+
+# zsh-autosuggestions accept-key
+bindkey '^ ' autosuggest-accept
 
 ######################################################################
 # Env; Global
 ######################################################################
 
-export TERM=xterm-256color
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR=nvim
-
-######################################################################
-# Env; golang
-######################################################################
-
-[ -n "$GOROOT" ] && export PATH=$GOROOT/bin:$PATH
-export PATH=${GOPATH:-~/go/bin}:$PATH
 
 ######################################################################
 # Env; fzf
@@ -66,20 +70,36 @@ export FZF_ALT_T_COMMAND=$FZF_DEFAULT_COMMAND
 export FZF_ALT_T_OPTS=$FZF_DEFAULT_OPTS
 
 ######################################################################
+# Env; golang
+######################################################################
+
+if command -v go &>/dev/null; then
+  [ -n "$GOROOT" ] && export PATH="$GOROOT/bin:$PATH"
+  export PATH="${GOPATH:-~/go/bin}:$PATH"
+fi
+
+######################################################################
+# Env; yarn
+######################################################################
+
+if command -v yarn &>/dev/null; then
+  export PATH="$(yarn global bin):$PATH"
+fi
+
+######################################################################
 # Env; ibus-hangul
 ######################################################################
 
-if [[ "$OSTYPE" = *"linux-gnu" ]]; then
+local ostype=$(uname | tr '[:upper]' '[:lower]')
+if [ $ostype = 'linux' ]; then
   export GTK_IM_MODULE=ibus
   export XMODIFIERS=@im=ibus
   export QT_IM_MODULE=ibus
 fi
 
 ######################################################################
-# Prompt; zsh
+# Prompt; zsh autocompletions
 ######################################################################
-
-source $ZSH/oh-my-zsh.sh
 
 autoload -Uz compinit
 compinit
