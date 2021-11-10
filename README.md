@@ -1,6 +1,6 @@
 # Dotfiles
 
-## Requirementes
+## Requirements
 
 - cc
 - zsh
