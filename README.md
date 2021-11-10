@@ -15,7 +15,7 @@
 ## Programs to be installed
 
 Below files/directories must be cleared before running `./install.sh`.
-After running `./install.sh` script file that is save to run again anytime.
+Multiple running `./install.sh` is safe.
 - $HOME/.zshrc
 - $HOME/.tmux.conf
 - $HOME/.tool-versions
