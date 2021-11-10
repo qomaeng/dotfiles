@@ -1,66 +1,45 @@
 # Dotfiles
 
 ## Requirementes
-- curl, wget
-- tar, unzip, gzip
-- awk
-- bash, zsh
-- vim, neovim
+
 - cc
+- zsh
 - git
-- [gpg](https://www.gnupg.org/): A versatile key management system
+- [neovim](https://github.com/neovim/neovim): Vim-fork focused on extensibility and usability
 - [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep): 'grep' alternative(fast)
 - [sharkdp/fd](https://github.com/sharkdp/fd): 'find' alternative(fast)
-- [bat](https://github.com/sharkdp/bat): 'cat' alternative(fast, syntax highlight, git integration)
-- [fzf](https://github.com/junegunn/fzf): A general-purpose command-line fuzzy finder
-- [tmux](https://github.com/tmux/tmux): A Terminal multiplexer
+- [sharkdp/bat](https://github.com/sharkdp/bat): 'cat' alternative(fast, syntax highlight, git integration)
+- [junegunn/fzf](https://github.com/junegunn/fzf): A general-purpose command-line fuzzy finder
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh): A framework for managing zsh config
-- [nerd-fonts](https://github.com/ryanoasis/nerd-fonts): Iconic font aggregator, collection and petcher
 
+## Programs to be installed
 
-## Setups
+Below files/directories must be cleared before running `./install.sh`.
+After running `./install.sh` script file that is save to run again anytime.
+- $HOME/.zshrc
+- $HOME/.tmux.conf
+- $HOME/.tool-versions
+- $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/
+- $HOME/.zsh/pure/
+- $HOME/.asdf/
+- $HOME/.config/nvim/
 
-### Zsh
+After running `./install.sh` script file below programs will be installed in local.
+- [asdf-vm/asdf](https://github.com/asdf-vm/asdf): Manage multiple runtime versions
+- rust
+- rust-analyzer
+- golang
+- gopls
+- python
+- pyright
+- nodejs
+- yarn
+- typescript-language-server
+- terraform
+- [awscli](https://github.com/aws/aws-cli): AWS CLI to control multiple AWS service and automate them through scripts
+- [k9s](https://github.com/derailed/k9s): Kubernetes CLI to manage clusters in style
+- kubectl
 
-```sh
-$ ln -sr zsh/.zshrc -t ~
-$ ln -sr zsh/.dir_colors -t ~
-```
-
-### Vim
-
-```sh
-$ ln -sr vim/.vim -T ~/.vim
-$ ln -sr vim/.vimrc  -t ~
-```
-
-### Nvim
-
-```sh
-$ ln -sr nvim -t ~/.config/
-```
-
-### asdf
-
-```sh
-$ ln -sr asdf/.tool-versions -t ~
-```
-
-
-### tmux
-
-```sh
-$ ln -sr tmux/.tmux.conf -t ~
-
-```
-## Post-settups
-
-```sh
-$ ./script/install_tools.sh
-$ ./script/install_asdf_plugins.sh
-$ asdf install
-$ ./script/install_lsp_servers.sh
-$ ./script/install_vim_plugins.sh
-$ ./script/install_nvim_plugins.sh
-```
+Below directories muse be cleared before running `./install.sh`.
+After running `./install.sh` script file that is save to run again anytime.
 

@@ -70,15 +70,6 @@ export FZF_ALT_T_COMMAND=$FZF_DEFAULT_COMMAND
 export FZF_ALT_T_OPTS=$FZF_DEFAULT_OPTS
 
 ######################################################################
-# Env; golang
-######################################################################
-
-if command -v go &>/dev/null; then
-  [ -n "$GOROOT" ] && export PATH="$GOROOT/bin:$PATH"
-  export PATH="${GOPATH:-~/go/bin}:$PATH"
-fi
-
-######################################################################
 # Env; yarn
 ######################################################################
 
