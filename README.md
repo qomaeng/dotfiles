@@ -24,7 +24,7 @@ Multiple running `./install.sh` is safe.
 - $HOME/.asdf/
 - $HOME/.config/nvim/
 
-After running `./install.sh` script file below programs will be installed in local.
+After running `./install.sh` script file below programs will be installed in local using `asdf`.
 - [asdf-vm/asdf](https://github.com/asdf-vm/asdf): Manage multiple runtime versions
 - rust
 - rust-analyzer
@@ -39,7 +39,3 @@ After running `./install.sh` script file below programs will be installed in loc
 - [awscli](https://github.com/aws/aws-cli): AWS CLI to control multiple AWS service and automate them through scripts
 - [k9s](https://github.com/derailed/k9s): Kubernetes CLI to manage clusters in style
 - kubectl
-
-Below directories muse be cleared before running `./install.sh`.
-After running `./install.sh` script file that is save to run again anytime.
-
