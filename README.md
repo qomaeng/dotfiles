@@ -39,3 +39,14 @@ After running `./install.sh` script file below programs will be installed in loc
 - [awscli](https://github.com/aws/aws-cli): AWS CLI to control multiple AWS service and automate them through scripts
 - [k9s](https://github.com/derailed/k9s): Kubernetes CLI to manage clusters in style
 - kubectl
+
+## Tips
+
+### Error occured when installing Neovim plugins even manual update using `PackerSync`
+Reinstall after clean Nvim configs and cache.
+
+```sh
+$ rm -rf "$HOME/.config/nvim"
+$ rm -rf "$HOME/.local/share/nvim"
+$ rm -rf "$HOME/.cache/nvim"
+```
