@@ -1,3 +1,6 @@
+# If shell does not run in interactive mode just return.
+[[ $- != *i* ]] && return
+
 ######################################################################
 # Pre Setups; oh-my-zsh
 ######################################################################
@@ -43,8 +46,8 @@ source $ZSH/oh-my-zsh.sh
 # bindkey as emac
 bindkey -e
 
+# if shell started in interactive mode 
 # disable software flow control XOFF(CTRL-S) and XON(CTRL-Q)
-# This lock key event process when i press CTRL-S mistakenly in VIM.
 [[ $- =~ i ]] && stty -ixoff -ixon
 
 # zsh-autosuggestions accept-key
@@ -89,30 +92,6 @@ if [ $ostype = 'linux' ]; then
 fi
 
 ######################################################################
-# Prompt; zsh autocompletions
-######################################################################
-
-autoload -Uz compinit
-compinit
-zstyle ':completion:*' menu select
-
-######################################################################
-# Prompt; Colors
-######################################################################
-
-# pure theme
-fpath+=$HOME/.zsh/pure
-
-autoload -U promptinit
-promptinit
-prompt pure
-
-# dir colors
-#if [ -r "~/.dir_colors" ]; then
-#  eval $(dircolors ~/.dir_colors)
-#fi
-
-######################################################################
 # Aliases
 ######################################################################
 
@@ -131,4 +110,23 @@ alias vim=$EDITOR
 alias bat='bat --theme="base16"'
 alias ssh='TERM="xterm-256color" ssh'
 alias tmux='tmux -2'
+
+######################################################################
+# Prompt; zsh autocompletions
+######################################################################
+
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
+
+######################################################################
+# Prompt; Colors
+######################################################################
+
+# pure theme
+fpath+=$HOME/.zsh/pure
+
+autoload -U promptinit
+promptinit
+prompt pure
 

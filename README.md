@@ -17,6 +17,7 @@
 Below files/directories must be cleared before running `./install.sh`.
 Multiple running `./install.sh` is safe.
 - $HOME/.zshrc
+- $HOME/.config/alacritty
 - $HOME/.tmux.conf
 - $HOME/.tool-versions
 - $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/
