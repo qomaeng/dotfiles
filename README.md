@@ -15,8 +15,10 @@
 
 ## Programs to be installed
 
-Below files/directories must be cleared before running `./install.sh`.
-Multiple running `./install.sh` is safe.
+`./install.sh` script will install git repository, programs, configs, etc.
+
+**Becareful** that after running the script below files/directories will be replaced by this dotfiles.
+So before running the script you have to backup files.
 - $HOME/.zshrc
 - $HOME/.tmux.conf
 - $HOME/.tool-versions
@@ -25,8 +27,9 @@ Multiple running `./install.sh` is safe.
 - $HOME/.config/alacritty/
 - $HOME/.asdf/
 - $HOME/.config/nvim/
+- $HOME/Pictures/wallpapers/
 
-After running `./install.sh` script file below programs will be installed in local using `asdf`.
+After running the script below programs will be installed in local using `asdf`.
 - [asdf-vm/asdf](https://github.com/asdf-vm/asdf): Manage multiple runtime versions
 - rust
 - rust-analyzer
@@ -52,3 +55,4 @@ $ rm -rf "$HOME/.config/nvim"
 $ rm -rf "$HOME/.local/share/nvim"
 $ rm -rf "$HOME/.cache/nvim"
 ```
+
