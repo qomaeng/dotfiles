@@ -1,31 +1,17 @@
-# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
-# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
-
-# Project:    Nord Alacritty
-# Version:    0.1.0
-# Repository: https://github.com/arcticicestudio/nord-alacritty
-# License:    MIT
-# References:
-#   https://github.com/alacritty/alacritty
-
 font:
   normal:
-    # family: "JetBrainMono Nerd Font"
     family: "Fira Code Nerd Font"
     style: Regular
 
   bold:
-    # family: "JetBrainMono Nerd Font"
     family: "Fira Code Nerd Font"
     style: Bold
 
   italic:
-    # family: "JetBrainMono Nerd Font"
     family: "Fira Code Nerd Font"
     style: Italic
 
   bold_italic:
-    # family: "JetBrainMono Nerd Font"
     family: "Fira Code Nerd Font"
     style: Bold Italic
 

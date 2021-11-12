@@ -5,12 +5,13 @@
 - cc
 - zsh
 - git
-- [neovim](https://github.com/neovim/neovim): Vim-fork focused on extensibility and usability
 - [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep): 'grep' alternative(fast)
 - [sharkdp/fd](https://github.com/sharkdp/fd): 'find' alternative(fast)
 - [sharkdp/bat](https://github.com/sharkdp/bat): 'cat' alternative(fast, syntax highlight, git integration)
 - [junegunn/fzf](https://github.com/junegunn/fzf): A general-purpose command-line fuzzy finder
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh): A framework for managing zsh config
+- [neovim](https://github.com/neovim/neovim): Vim-fork focused on extensibility and usability
+- [alacritty](): 
 
 ## Programs to be installed
 
