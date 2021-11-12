@@ -154,18 +154,14 @@ git_sync() {
   branch=$3
 
   printf "Git synchronizing '$url' '$branch'\n"
-  _git_sync $@
   
-  res=$?; if [ $res -eq 0 ]; then
-    printf "  synchronized\n"
-  elif [ $res -eq 15 ]; then
-    printf "  already up to date\n"
-    res=0
-  else
+  _git_sync $@
+  res=$?; if [ $res -ne 0 ] && [ $res -ne 15 ]; then
     printf "  -> failed git sync\n"
+    return $res
   fi
   
-  return $res # return 'git_can_clone' result
+  return 0
 }
 
 _git_sync() {
