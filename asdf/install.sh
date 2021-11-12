@@ -40,9 +40,9 @@ for (( i=0; i<$plugins_len; i++ )); do
   plugin_name=${plugins[${i}]}
   printf "($((i+1))/$plugins_len) installing asdf plugin: $plugin_name\n"
   
-  out=$(asdf plugin add "$plugin_name" 2>/dev/null)
+  errmsg=$(asdf plugin add "$plugin_name" 2>&1 >/dev/null)
   res=$?; if [ $res -ne 0 ] && [ $res -ne 2 ]; then
-    printf "  -> failed to install\n"
+    printf "  -> failed: $errmsg\n"
     exit $res
   fi
 done
@@ -71,9 +71,9 @@ for (( i=0; i<$plugins_len; i++ )); do
   plugin_name=${plugins[${i}]}
   printf "($((i+1))/$plugins_len) installing package using asdf: $plugin_name\n"
   
-  out=$(asdf install "$plugin_name" 2>/dev/null)
+  errmsg=$(asdf install "$plugin_name" 2>&1 >/dev/null)
   res=$?; if [ $res -ne 0 ]; then
-    printf "  -> failed to install\n"
+    printf "  -> failed: $errmsg\n"
     exit $res
   fi
 done

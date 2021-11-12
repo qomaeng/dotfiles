@@ -89,7 +89,7 @@ git_pull() {
   fi
 
   # Git pull
-  errmsg=$(git -C $target pull --rebase --quiet 2>&1 1>/dev/null)
+  errmsg=$(git -C $target pull --rebase --quiet 2>&1 >/dev/null)
   if [ $? -ne 0 ]; then
     printf "git_pull: Error occured while 'git pull --rebase'\n"
     printf "  target: $target\n"
