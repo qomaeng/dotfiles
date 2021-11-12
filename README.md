@@ -27,6 +27,7 @@ So before running the script you have to backup files.
 - $HOME/.config/alacritty/
 - $HOME/.asdf/
 - $HOME/.config/nvim/
+- $HOME/.config/alacritty/
 - $HOME/Pictures/wallpapers/
 
 After running the script below programs will be installed in local using `asdf`.
