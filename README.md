@@ -5,6 +5,7 @@
 - cc
 - zsh
 - git
+- [nerdfont](https://github.com/ryanoasis/nerd-fonts): Iconic font aggregator, collection, & patcher.
 - [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep): 'grep' alternative(fast)
 - [sharkdp/fd](https://github.com/sharkdp/fd): 'find' alternative(fast)
 - [sharkdp/bat](https://github.com/sharkdp/bat): 'cat' alternative(fast, syntax highlight, git integration)
