@@ -12,6 +12,6 @@
   ./xorg/install.sh && \
   ./fonts/install.sh && \
   ./picom/install.sh && \
-  ./polybar/install.sh && |
+  ./polybar/install.sh && \
   ./rofi/install.sh
 

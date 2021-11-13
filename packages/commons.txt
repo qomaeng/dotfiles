@@ -2,6 +2,7 @@ alacritty
 base
 bash
 bluez
+bspwm
 cuda
 dhclient
 discord
@@ -14,7 +15,6 @@ gcc
 git
 grub
 htop
-i3-gaps
 intel-ucode
 lazygit
 linux
@@ -35,6 +35,7 @@ ranger
 rofi
 rsync
 sudo
+sxhkd
 tar
 tmux
 tree
