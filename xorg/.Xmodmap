@@ -4,3 +4,7 @@ clear Control
 keycode 66 = Control_L
 add Control = Control_L Control_R
 
+! hangul
+remove mod1 = Alt_R
+keycode 108 = Hangul
+

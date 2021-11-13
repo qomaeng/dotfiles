@@ -35,6 +35,9 @@ nvidia-settings
 openssh
 opencl-nvidia
 picom
+python
+python-pip
+python-pyqt5
 ranger
 ripgrep
 rofi
