@@ -1,18 +1,5 @@
 # Dotfiles
 
-## Requirements
-
-- cc
-- zsh
-- git
-- [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep): 'grep' alternative(fast)
-- [sharkdp/fd](https://github.com/sharkdp/fd): 'find' alternative(fast)
-- [sharkdp/bat](https://github.com/sharkdp/bat): 'cat' alternative(fast, syntax highlight, git integration)
-- [junegunn/fzf](https://github.com/junegunn/fzf): A general-purpose command-line fuzzy finder
-- [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh): A framework for managing zsh config
-- [neovim](https://github.com/neovim/neovim): Vim-fork focused on extensibility and usability
-- [alacritty](): 
-
 ## Programs to be installed
 
 `./install.sh` script will install git repository, programs, configs, etc.
@@ -24,13 +11,20 @@ So before running the script you have to backup files.
 - $HOME/.tool-versions
 - $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/
 - $HOME/.zsh/pure/
-- $HOME/.config/alacritty/
 - $HOME/.asdf/
+- $HOME/.config/alacritty/
 - $HOME/.config/nvim/
 - $HOME/.config/alacritty/
+- $HOME/.config/bspwm/
+- $HOME/.config/sxhkd/
+- $HOME/.config/picom/
+- $HOME/.config/polybar/
+- $HOME/.config/rofi/
+- $HOME/.local/share/fonts/NerdFonts/
 - $HOME/Pictures/wallpapers/
 
-After running the script below programs will be installed in local using `asdf`.
+After running the script below packages will be installed in local.
+- [oh-my-zsh](): 
 - [asdf-vm/asdf](https://github.com/asdf-vm/asdf): Manage multiple runtime versions
 - rust
 - rust-analyzer

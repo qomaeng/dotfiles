@@ -18,6 +18,32 @@ git_sync \
 res=$?; [ $res -ne 0 ] && exit $res
   
 ######################################################################
+# Install oh-my-zsh
+######################################################################
+
+printf "Installing oh-my-zsh...\n"
+
+if [ ! command -v omz ]; then
+  printf "(1/2) retrieving oh-my-zsh install script\n"
+  
+  install_script="$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh 2>/dev/null)"
+  res=$?; if [ $res -ne 0 ]; then
+    errmsg="$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh 2>&1 >/dev/null)"
+    
+    printf "  -> failed: $errmsg\n"
+    exit $res
+  fi
+  
+  printf "(2/2) running oh-my-zsh install script\n"
+  
+  errmsg="$(sh -c \"$install_script\" 2>&1 >/dev/null)"
+  res=$?; if [ $res -ne 0 ]; then
+    printf "  -> failed: $errmsg\n"
+    exit $res
+  fi
+fi
+
+######################################################################
 # Git sync zsh-autosuggestions
 ######################################################################
 
