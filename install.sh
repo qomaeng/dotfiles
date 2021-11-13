@@ -8,5 +8,10 @@
   ./bspwm/install.sh && \
   ./sxhkd/install.sh && \
   ./wallpapers/install.sh && \
-  ./feh/install.sh
+  ./feh/install.sh && \
+  ./xorg/install.sh && \
+  ./fonts/install.sh && \
+  ./picom/install.sh && \
+  ./polybar/install.sh && |
+  ./rofi/install.sh
 

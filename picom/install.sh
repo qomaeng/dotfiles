@@ -2,15 +2,15 @@
 
 BASEDIR=$(dirname "$0")
 
-printf ":: Installing sxhkd...\n"
+printf ":: Installing picom...\n"
 
 ######################################################################
-# Link sxhkd
+# Link picom
 ######################################################################
 
-printf "Linking \"$HOME/.config/sxhkd\" -> \"$BASEDIR/.config/sxhkd\"\n"
+printf "Linking \"$HOME/.config/picom\" -> \"$BASEDIR/.config/picom\"\n"
 
-errmsg=$(ln -srf "$BASEDIR/.config/sxhkd" -t "$HOME/.config" 2>&1 >/dev/null)
+errmsg=$(ln -srf "$BASEDIR/.config/picom" -t "$HOME/.config" 2>&1 >/dev/null)
 res=$?; if [ $res -ne 0 ]; then
   printf "  -> failed: $errmsg\n"
   exit $res

@@ -130,3 +130,8 @@ autoload -U promptinit
 promptinit
 prompt pure
 
+# Start Xorg
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
+

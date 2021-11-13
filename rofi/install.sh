@@ -2,15 +2,15 @@
 
 BASEDIR=$(dirname "$0")
 
-printf ":: Installing sxhkd...\n"
+printf ":: Installing rofi...\n"
 
 ######################################################################
-# Link sxhkd
+# Link rofi
 ######################################################################
 
-printf "Linking \"$HOME/.config/sxhkd\" -> \"$BASEDIR/.config/sxhkd\"\n"
+printf "Linking \"$HOME/.config/rofi\" -> \"$BASEDIR/.config/rofi\"\n"
 
-errmsg=$(ln -srf "$BASEDIR/.config/sxhkd" -t "$HOME/.config" 2>&1 >/dev/null)
+errmsg=$(ln -srf "$BASEDIR/.config/rofi" -t "$HOME/.config" 2>&1 >/dev/null)
 res=$?; if [ $res -ne 0 ]; then
   printf "  -> failed: $errmsg\n"
   exit $res

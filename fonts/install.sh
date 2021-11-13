@@ -2,15 +2,15 @@
 
 BASEDIR=$(dirname "$0")
 
-printf ":: Installing sxhkd...\n"
+printf ":: Installing fonts...\n"
 
 ######################################################################
-# Link sxhkd
+# Link .config/alacritty
 ######################################################################
 
-printf "Linking \"$HOME/.config/sxhkd\" -> \"$BASEDIR/.config/sxhkd\"\n"
+printf "Linking \"$HOME/.local/share/fonts/NerdFonts\" -> \"$BASEDIR/.fonts/NerdFonts\"\n"
 
-errmsg=$(ln -srf "$BASEDIR/.config/sxhkd" -t "$HOME/.config" 2>&1 >/dev/null)
+errmsg=$(ln -srf "$BASEDIR/.fonts/NerdFonts" -t "$HOME/.local/share/fonts" 2>&1 >/dev/null)
 res=$?; if [ $res -ne 0 ]; then
   printf "  -> failed: $errmsg\n"
   exit $res

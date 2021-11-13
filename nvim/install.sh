@@ -12,7 +12,7 @@ printf ":: Installing nvim...\n"
 
 git_sync \
   "$HOME/.config/nvim" \
-  "git@github.com:qomaeng/NvChad.git" \
+  "https://github.com/qomaeng/NvChad.git" \
   "main"
 
 res=$?; [ $res -ne 0 ] && exit $res
