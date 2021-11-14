@@ -1,17 +1,17 @@
 #!/bin/sh
 
-./tmux/install.sh && \
-  ./alacritty/install.sh && \
-  ./asdf/install.sh && \
-  ./zsh/install.sh && \
-  ./nvim/install.sh && \
-  ./bspwm/install.sh && \
-  ./sxhkd/install.sh && \
-  ./wallpapers/install.sh && \
-  ./feh/install.sh && \
-  ./xorg/install.sh && \
-  ./fonts/install.sh && \
-  ./picom/install.sh && \
-  ./polybar/install.sh && \
-  ./rofi/install.sh
+./fonts/install.sh || exit
+./asdf/install.sh || exit
+./zsh/install.sh || exit
+./nvim/install.sh || exit
+./tmux/install.sh || exit
+./xorg/install.sh || exit
+./alacritty/install.sh || exit
+./bspwm/install.sh || exit
+./sxhkd/install.sh || exit
+./polybar/install.sh || exit
+./picom/install.sh || exit
+./rofi/install.sh || exit
+./feh/install.sh || exit
+./wallpapers/install.sh || exit
 

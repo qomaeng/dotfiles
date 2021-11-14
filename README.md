@@ -1,5 +1,9 @@
 # Dotfiles
 
+## Requirements
+
+- [oh-my-zsh](): 
+
 ## Programs to be installed
 
 `./install.sh` script will install git repository, programs, configs, etc.
