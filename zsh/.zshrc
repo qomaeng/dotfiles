@@ -1,6 +1,3 @@
-# If shell does not run in interactive mode just return.
-[[ $- != *i* ]] && return
-
 ######################################################################
 # Pre Setups; oh-my-zsh
 ######################################################################
@@ -30,6 +27,7 @@ plugins=(
   asdf
   fzf
   zsh-autosuggestions
+  zsh-completions
 
   rustup
   cargo
@@ -112,23 +110,27 @@ alias ssh='TERM="xterm-256color" ssh'
 alias tmux='tmux -2'
 
 ######################################################################
-# Prompt; zsh autocompletions
-######################################################################
-
-autoload -Uz compinit
-compinit
-zstyle ':completion:*' menu select
-
-######################################################################
 # Prompt; Colors
 ######################################################################
 
 # pure theme
-fpath+=$HOME/.zsh/pure
+fpath+="$HOME/.zsh/pure"
 
 autoload -U promptinit
 promptinit
 prompt pure
+
+######################################################################
+# Prompt; zsh
+######################################################################
+
+# zsh-users/zsh-completions
+fpath+="$HOME/.oh-my-zsh/custom/plugins/zsh-completions/src"
+
+# zsh auto completion
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
 
 # Start Xorg
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then

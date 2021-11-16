@@ -3,12 +3,14 @@ base
 bash
 bat
 bluez
+bluez-utils
 bspwm
 cuda
 curl
 dhcpcd
 discord
 dunst
+fakeroot
 fd
 feh
 firefox
@@ -17,6 +19,8 @@ fzf
 gcc
 git
 gnupg
+gtk3
+gtk4
 htop
 intel-ucode
 jq
@@ -25,6 +29,7 @@ linux
 linux-firmware
 lsof
 make
+man-db
 mpc
 mpd
 mpv
@@ -35,9 +40,13 @@ nvidia-settings
 openssh
 opencl-nvidia
 picom
+pulseaudio
+pulseaudio-bluetooth
 python
 python-pip
 python-pyqt5
+qt5-base
+qt6-base
 ranger
 ripgrep
 rofi
@@ -50,6 +59,7 @@ tree
 unrar
 unzip
 usbutils
+vi
 wget
 xdg-user-dirs
 xorg-server

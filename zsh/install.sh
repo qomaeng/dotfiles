@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 BASEDIR=$(dirname "$0")
 
@@ -24,6 +24,17 @@ res=$?; [ $res -ne 0 ] && exit $res
 git_sync \
   "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" \
   "https://github.com/zsh-users/zsh-autosuggestions.git" \
+  "master"
+
+res=$?; [ $res -ne 0 ] && exit $res
+
+######################################################################
+# Git sync zsh-completions
+######################################################################
+
+git_sync \
+  "$HOME/.oh-my-zsh/custom/plugins/zsh-completions" \
+  "https://github.com/zsh-users/zsh-completions.git" \
   "master"
 
 res=$?; [ $res -ne 0 ] && exit $res

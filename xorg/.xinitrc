@@ -35,6 +35,9 @@ fi
 # set key repeat rate: (delay, rate)
 xset r rate 200 25
 
-bspwm &
+# start ibus-daemon for hangul input
+ibus-daemon -drxR
+
 polybar main &
-exec alacritty
+
+exec bspwm

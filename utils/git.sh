@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 GIT_ERR_STR=(
   "invalid arguments" # 1
