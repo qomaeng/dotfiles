@@ -1,12 +1,4 @@
 ######################################################################
-# Workspaces
-######################################################################
-
-# go to workspace
-super + {_,shift + }{1-9,0}
-  bspc {desktop -f,node -d} '^{1-9,10}'paces 
-
-######################################################################
 # Applications
 ######################################################################
 
@@ -14,46 +6,113 @@ super + Return
   alacritty
 
 super + space 
-  rofi -show run
+  rofi -show drun
 
 super + shift + space 
   rofi -show window
 
+super + period
+  bspc node -g hidden=on
+
+super + shift + period
+  bspc node \
+    $( \
+      selected=$( \
+        for id in $(bspc query -N -n .hidden); do \
+          title=$(xtitle $id); \
+          [ -z "$title" ] && title="<unnamed>"; \
+          echo $id $title; \
+        done | \
+        rofi -dmenu -i -p 'Hidden windows' | cut -f1 -d ' ' \
+      ); \
+      [ -z "$selected" ] && exit 1; \
+      echo $selected; \
+    ) \
+  --flag hidden=off
+
 ######################################################################
-# Window
+# Bspwm
 ######################################################################
 
-# restart bspwm
+# Bspwm WM; Restart bspwm
 super + shift + r
   bspc wm -r
 
-# toggle fullsceen window
-super + f
-  bspc node -t \~fullscreen
-
-# toggle floating/tiled window
-super + Tab
-  bspc node -t {floating,tiled}
-
-# focus directed window
-super + {h,j,k,l}
-  {bspc node -f west, bspc node -f south, bspc node -f north, bspc node -f east}
-
-# quit window
-super + q
-  bspc node -{c,k}
-
-# switching window focus
+# Bspwm Node; Focus the next node in the current workspace
 alt + Tab
   bspc node -f next.local.!hidden.window
 
-# resizing window
-super + shift + ctrl + {h,j,k,l}
-  {bspc node -z left 10 10; bspc node -z right -10 -10, bspc node -z top 10 10; bspc node -z bottom -10 -10, bspc node -z top -10 -10; bspc node -z bottom 10 10, bspc node -z left -10 -10; bspc node -z right 10 10}
+# Bspwm Node; Focus the directed node
+super + {h,j,k,l}
+  { \
+    bspc node -f west, \
+    bspc node -f south, \
+    bspc node -f north, \
+    bspc node -f east \
+  }
 
-# move window at direction
+# Bspwm Node; Send the focused node to the selected desktop
+super + shift + {1-9,0}
+  bspc node -d '^{1-9,10}'
+
+# Bspwm Node; Send the focused node to the directed monitor
+super + m; shift + {1-9,0} 
+  bspc node -m '^{1-9,10}' 
+
+# Bspwm Node; Send the focused node to the directed monitor
+super + m; shift + {h,j,k,l}
+  bspc node -m { \
+    west, \
+    south, \
+    north, \
+    east \
+  }
+
+# Bspwm Node; Send the focused node on the directed node
+super + shift + ctrl + {h,j,k,l}
+  bspc node -n {west,south,north,east} --follow
+
+# Bspwm Node; Swap the focused node with the directed node
 super + shift + {h,j,k,l}
-  bspc node -s {west,south,north,east}
+  bspc node -s {west,south,north,east} --follow
+
+# Bspwm Node: Move the focused node
+super + shift + ctrl + alt + {h,j,k,l}
+  { \
+    bspc node -v -10   0, \
+    bspc node -v   0  10, \
+    bspc node -v   0 -10, \
+    bspc node -v  10   0  \
+  }
+
+# Bspwm Node; Resize the focused node
+super + shift + alt + {h,j,k,l}
+  { \
+    bspc node -z right  -10   0 || bspc node -z left  10   0, \
+    bspc node -z bottom   0  10 || bspc node -z top    0 -10, \
+    bspc node -z bottom   0 -10 || bspc node -z top    0  10, \
+    bspc node -z right   10   0 || bspc node -z left -10   0  \
+  }
+
+# Bspwm Node; Toggle the floating state of the focused window
+super + shift + Tab
+  bspc node -t floating || bspc node -t tiled
+
+# Bspwm Node; Toggle the fullscreen state of the focused window
+super + f
+  bspc node -t \~fullscreen
+
+# Bspwm node; Close the windows rooted at the focused node
+super + q
+  bspc node -c
+
+# Bspwm Desktop; Focus the selected workspace
+super + {1-9,0}
+  bspc desktop -f '^{1-9,10}'
+
+# Bspwm Desktop; Focus the next workspace occupied with something
+super + Tab
+  bspc desktop -f next.occupied
 
 ######################################################################
 # Screen
@@ -66,4 +125,11 @@ Print
 # Capture full screen
 ctrl + Print
   flameshot gui
+
+######################################################################
+# Input Devices
+######################################################################
+
+XF86Audio{Prev,Next}
+  mpc -q {prev,next}
 
