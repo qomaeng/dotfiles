@@ -51,7 +51,6 @@ res=$?; if [ $res -ne 0 ]; then
   exit $res
 fi
 
-source "$HOME/.zshrc"
 res=$?; if [ $res -ne 0 ]; then
   printf "  -> Error occured while sourcing script\n"
   exit $res
