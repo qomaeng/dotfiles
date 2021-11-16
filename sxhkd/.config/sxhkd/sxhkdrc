@@ -15,20 +15,17 @@ super + period
   bspc node -g hidden=on
 
 super + shift + period
-  bspc node \
-    $( \
-      selected=$( \
-        for id in $(bspc query -N -n .hidden); do \
-          title=$(xtitle $id); \
-          [ -z "$title" ] && title="<unnamed>"; \
-          echo $id $title; \
-        done | \
-        rofi -dmenu -i -p 'Hidden windows' | cut -f1 -d ' ' \
-      ); \
-      [ -z "$selected" ] && exit 1; \
-      echo $selected; \
-    ) \
-  --flag hidden=off
+  selected=$( \
+    for id in $(bspc query -N -n .hidden); do \
+      title=$(xtitle $id); \
+      [ -z "$title" ] && title="<unnamed>"; \
+      echo $id $title; \
+    done | \
+    rofi -dmenu -i -p 'Hidden windows' | cut -f1 -d ' ' \
+  ); \
+  [ -z "$selected" ] && exit 1; \
+  bspc node $selected --flag hidden=off; \
+  bspc node -f $selected
 
 ######################################################################
 # Bspwm
