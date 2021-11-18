@@ -23,9 +23,9 @@ res=$?; [ $res -ne 0 ] && exit $res
 
 printf "Synchronizing Nvim plugins...\n"
 
-errmsg=$(nvim +'hi NormalFloat guibg=#1e222a' +PackerSync +quitall! 2>&1 >/dev/null)
+nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 res=$?; if [ $res -ne 0 ]; then
-  printf "  -> failed: $errmsg\n"
+  printf "  -> failed to sync nvim plugins using packer\n"
   exit $res
 fi
 

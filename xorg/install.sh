@@ -5,6 +5,18 @@ BASEDIR=$(dirname "$0")
 printf ":: Installing xorg...\n"
 
 ######################################################################
+# Link .xinitrc
+######################################################################
+
+printf "Linking \"$HOME/.xinitrc\" -> \"$BASEDIR/.xinitrc\"\n"
+
+errmsg=$(ln -srf "$BASEDIR/.xinitrc" -t "$HOME" 2>&1 >/dev/null)
+res=$?; if [ $res -ne 0 ]; then
+  printf "  -> failed: $errmsg\n"
+  exit $res
+fi
+
+######################################################################
 # Link .xserverrc
 ######################################################################
 
@@ -17,12 +29,20 @@ res=$?; if [ $res -ne 0 ]; then
 fi
 
 ######################################################################
-# Link .xinitrc
+# Link .Xresources
 ######################################################################
 
-printf "Linking \"$HOME/.xinitrc\" -> \"$BASEDIR/.xinitrc\"\n"
+printf "Linking \"$HOME/.Xresources\" -> \"$BASEDIR/.Xresources\"\n"
 
-errmsg=$(ln -srf "$BASEDIR/.xinitrc" -t "$HOME" 2>&1 >/dev/null)
+errmsg=$(ln -srf "$BASEDIR/.Xresources" -t "$HOME" 2>&1 >/dev/null)
+res=$?; if [ $res -ne 0 ]; then
+  printf "  -> failed: $errmsg\n"
+  exit $res
+fi
+
+printf "Linking \"$HOME/.Xresources.d\" -> \"$BASEDIR/.Xresources.d\"\n"
+
+errmsg=$(ln -srf "$BASEDIR/.Xresources.d" -t "$HOME" 2>&1 >/dev/null)
 res=$?; if [ $res -ne 0 ]; then
   printf "  -> failed: $errmsg\n"
   exit $res

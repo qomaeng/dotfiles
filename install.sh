@@ -7,11 +7,13 @@
 ./tmux/install.sh || exit
 ./xorg/install.sh || exit
 ./alacritty/install.sh || exit
+./feh/install.sh || exit
 ./bspwm/install.sh || exit
-./sxhkd/install.sh || exit
+./rofi/install.sh || exit
 ./polybar/install.sh || exit
 ./picom/install.sh || exit
-./rofi/install.sh || exit
-./feh/install.sh || exit
+./dunst/install.sh || exit
+./sxhkd/install.sh || exit
+./mpd/install.sh || exit
 ./wallpapers/install.sh || exit
 

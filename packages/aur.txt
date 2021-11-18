@@ -1,3 +1,6 @@
+nerd-fonts-complete
 polybar
 spotify
+ttf-material-design-icons
+ttf-unifont
 xtitle

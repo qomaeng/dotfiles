@@ -5,27 +5,23 @@
 super + Return
   alacritty
 
+super + e
+  thunar
+
 super + space 
-  rofi -show drun
+  $HOME/.config/rofi/scripts/show-drun.sh
+
+super + ctrl + space
+  $HOME/.config/rofi/scripts/show-run.sh
 
 super + shift + space 
-  rofi -show window
+  $HOME/.config/rofi/scripts/show-window.sh
+
+super + alt + space
+  $HOME/.config/rofi/scripts/show-hidden.sh
 
 super + period
   bspc node -g hidden=on
-
-super + shift + period
-  selected=$( \
-    for id in $(bspc query -N -n .hidden); do \
-      title=$(xtitle $id); \
-      [ -z "$title" ] && title="<unnamed>"; \
-      echo $id $title; \
-    done | \
-    rofi -dmenu -i -p 'Hidden windows' | cut -f1 -d ' ' \
-  ); \
-  [ -z "$selected" ] && exit 1; \
-  bspc node $selected --flag hidden=off; \
-  bspc node -f $selected
 
 ######################################################################
 # Bspwm
@@ -92,16 +88,16 @@ super + shift + alt + {h,j,k,l}
   }
 
 # Bspwm Node; Toggle the floating state of the focused window
-super + shift + Tab
+super + d
   bspc node -t floating || bspc node -t tiled
 
 # Bspwm Node; Toggle the fullscreen state of the focused window
 super + f
   bspc node -t \~fullscreen
 
-# Bspwm node; Close the windows rooted at the focused node
-super + q
-  bspc node -c
+# Bspwm node; Close/Kill the windows rooted at the focused node
+super + {_,shift +} q
+  bspc node -{c,k}
 
 # Bspwm Desktop; Focus the selected workspace
 super + {1-9,0}
