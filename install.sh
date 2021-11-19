@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ./fonts/install.sh || exit
 ./asdf/install.sh || exit
@@ -7,7 +7,6 @@
 ./tmux/install.sh || exit
 ./xorg/install.sh || exit
 ./alacritty/install.sh || exit
-./feh/install.sh || exit
 ./bspwm/install.sh || exit
 ./rofi/install.sh || exit
 ./polybar/install.sh || exit

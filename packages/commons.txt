@@ -1,3 +1,4 @@
+adobe-source-code-pro-fonts
 alacritty
 base
 bash
@@ -23,6 +24,7 @@ gtk3
 gtk4
 htop
 intel-ucode
+iwd
 jq
 lazygit
 linux
@@ -34,7 +36,6 @@ mpc
 mpd
 mpv
 neovim
-networkmanager
 nvidia
 nvidia-settings
 openssh

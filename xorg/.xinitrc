@@ -41,6 +41,6 @@ xset s 600
 xset dmps 900 900 900
 
 # set key repeat rate: (delay, rate)
-xset r rate 200 25
+xset r rate 300 25
 
 exec bspwm

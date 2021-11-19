@@ -1,8 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env /bin/bash
 
 BASEDIR=$(dirname "$0")
 
-source "$BASEDIR/../utils/git.sh"
+. "$BASEDIR/../utils/git.sh"
 
 printf ":: Installing zsh pure theme...\n"
 

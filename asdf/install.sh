@@ -1,8 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env /bin/bash
 
 BASEDIR=$(dirname "$0")
 
-source "$BASEDIR/../utils/git.sh"
+. "$BASEDIR/../utils/git.sh"
 
 printf ":: Installing asdf...\n"
 
@@ -17,7 +17,7 @@ git_sync \
 
 res=$?; [ $res -ne 0 ] && exit $res
 
-source "$HOME/.asdf/asdf.sh" && source "$HOME/.asdf/completions/asdf.bash"
+. "$HOME/.asdf/asdf.sh" && . "$HOME/.asdf/completions/asdf.bash"
 res=$?; if [ $? -ne 0 ]; then
   printf "  -> error occured while sourcing script\n"
   exit $res

@@ -123,6 +123,3 @@ ctrl + Print
 # Input Devices
 ######################################################################
 
-XF86Audio{Prev,Next}
-  mpc -q {prev,next}
-
