@@ -1,4 +1,4 @@
 #include "colors/nord"
 
-Xft.dpi: 192
+#Xft.dpi: 96
 

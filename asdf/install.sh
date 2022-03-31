@@ -30,8 +30,10 @@ fi
 plugins=(
   awscli
   golang
+  java
   k9s
   kubectl
+  maven
   nodejs
   python
   rust

@@ -29,8 +29,7 @@ plugins=(
   zsh-autosuggestions
   zsh-completions
 
-  rustup
-  cargo
+  rust
 
   terraform
 )
