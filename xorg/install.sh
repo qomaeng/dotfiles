@@ -8,55 +8,20 @@ printf ":: Installing xorg...\n"
 # Link .xinitrc
 ######################################################################
 
-printf "Linking \"$HOME/.xinitrc\" -> \"$BASEDIR/.xinitrc\"\n"
-
-errmsg=$(ln -srf "$BASEDIR/.xinitrc" -t "$HOME" 2>&1 >/dev/null)
-res=$?; if [ $res -ne 0 ]; then
-  printf "  -> failed: $errmsg\n"
-  exit $res
-fi
-
-######################################################################
-# Link .xserverrc
-######################################################################
-
-printf "Linking \"$HOME/.xserverrc\" -> \"$BASEDIR/.xserverrc\"\n"
-
-errmsg=$(ln -srf "$BASEDIR/.xserverrc" -t "$HOME" 2>&1 >/dev/null)
-res=$?; if [ $res -ne 0 ]; then
-  printf "  -> failed: $errmsg\n"
-  exit $res
-fi
-
-######################################################################
-# Link .Xresources
-######################################################################
-
-printf "Linking \"$HOME/.Xresources\" -> \"$BASEDIR/.Xresources\"\n"
-
-errmsg=$(ln -srf "$BASEDIR/.Xresources" -t "$HOME" 2>&1 >/dev/null)
-res=$?; if [ $res -ne 0 ]; then
-  printf "  -> failed: $errmsg\n"
-  exit $res
-fi
-
-printf "Linking \"$HOME/.Xresources.d\" -> \"$BASEDIR/.Xresources.d\"\n"
-
-errmsg=$(ln -srf "$BASEDIR/.Xresources.d" -t "$HOME" 2>&1 >/dev/null)
-res=$?; if [ $res -ne 0 ]; then
-  printf "  -> failed: $errmsg\n"
-  exit $res
-fi
-
-######################################################################
-# Link .Xmodmap
-######################################################################
-
-printf "Linking \"$HOME/.Xmodmap\" -> \"$BASEDIR/.Xmodmap\"\n"
-
-errmsg=$(ln -srf "$BASEDIR/.Xmodmap" -t "$HOME" 2>&1 >/dev/null)
-res=$?; if [ $res -ne 0 ]; then
-  printf "  -> failed: $errmsg\n"
-  exit $res
-fi
+while read file
+do 
+  printf "Linking \"$HOME/$file\" -> \"$BASEDIR/$file\"\n"
+  
+  errmsg=$(ln -srf "$BASEDIR/$file" -t "$HOME/" 2>&1 >/dev/null)
+  res=$?; if [ $res -ne 0 ]; then
+    printf "  -> failed: $errmsg\n"
+    exit $res
+  fi
+done <<-EOF
+.xinitrc
+.xserverrc
+.Xresources
+.Xresources.d
+.Xmodmap
+EOF
 

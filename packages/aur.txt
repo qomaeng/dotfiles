@@ -1,5 +1,0 @@
-nerd-fonts-complete
-polybar
-spotify
-ttf-material-design-icons
-xtitle

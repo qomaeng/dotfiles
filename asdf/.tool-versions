@@ -1,12 +1,12 @@
-awscli 2.3.4
-golang 1.17.3
-k9s 0.24.15
-kubectl 1.22.3
-nodejs 17.0.1
+awscli latest
+golang system
+k9s latest
+kubectl latest
+nodejs system
 python system
-rust 1.56.1
-terraform 1.0.10
-yarn 1.22.17
+rust system
+terraform latest
+yarn system
 
-java corretto-11.0.13.8.1
-maven 3.5.4
+java corretto-11.0.15.9.1
+maven latest

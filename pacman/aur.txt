@@ -1,0 +1,4 @@
+nerd-fonts-complete
+spotify
+ttf-material-design-icons
+xtitle
