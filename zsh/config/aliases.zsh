@@ -16,7 +16,8 @@ alias lt="ls --tree"
 alias vi=$EDITOR
 alias vim=$EDITOR
 alias bat='bat --color always --plain --theme="base16"'
-alias grep='grep --color=auto'
+alias cat='bat'
+alias grep='rg'
 alias ssh='TERM="xterm-256color" ssh'
 alias tmux='tmux -2'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'

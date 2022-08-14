@@ -5,12 +5,14 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
 export GPG_TTY="${TTY:-$(tty)}"
 
 export SUDO_PROMPT="passwd: "
-export TERMINAL="wezterm"
+export TERMINAL="alacritty"
 export BROWSER="firefox"
 export VISUAL="nvim"
 export EDITOR="nvim"
