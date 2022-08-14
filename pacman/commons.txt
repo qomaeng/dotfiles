@@ -82,6 +82,7 @@ unrar
 unzip
 upower
 usbutils
+vim
 wezterm
 wget
 xdg-user-dirs
