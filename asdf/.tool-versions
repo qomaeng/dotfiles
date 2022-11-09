@@ -1,11 +1,11 @@
-awscli latest
+awscli 2.7.23
 golang system
-k9s latest
-kubectl latest
+k9s system
+kubectl system
 nodejs system
 python system
 rust system
-terraform latest
+terraform system
 yarn system
 
 java corretto-11.0.15.9.1

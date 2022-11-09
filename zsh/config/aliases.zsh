@@ -11,10 +11,12 @@ alias cd.='cd ..'
 alias cd..='cd ../..'
 alias ls='exa --color=auto --icons'
 alias l='ls -l'
-alias ll='ls -la'
+alias ll='ls -l'
+alias la='ls -la'
 alias lt="ls --tree"
-alias vi=$EDITOR
-alias vim=$EDITOR
+alias hx=helix
+alias vi=nvim
+alias vim=nvim
 alias bat='bat --color always --plain --theme="base16"'
 alias cat='bat'
 alias grep='rg'

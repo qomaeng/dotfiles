@@ -4,6 +4,7 @@ acpid
 acpi_call
 alacritty
 awesome-git
+aws-cli
 base
 bash
 bat
@@ -28,11 +29,14 @@ gnupg
 gpick
 gtk3
 gtk4
+helix
 htop
 inotify-tools
 intel-ucode
 iwd
 jq
+kubectl
+k9s
 lazygit
 linux
 linux-firmware
@@ -45,9 +49,9 @@ mpd
 mpdris2
 mpv
 ncmpcpp
-neovim
 nvidia
 nvidia-settings
+neovim
 openssh
 opencl-nvidia
 pamixer
@@ -74,6 +78,7 @@ scrot
 sudo
 sxhkd
 tar
+terraform
 thunar
 tmux
 tree

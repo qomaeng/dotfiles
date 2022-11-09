@@ -35,10 +35,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # Set screensave timeout(unit: sec)
-xset s 600
+xset s 3600
 
 # Enable DPMS standby/suspend/off timeout(unit: sec)
-xset dmps 900 900 900
+xset dpms 3600 3600 3600
 
 # set key repeat rate: (delay, rate)
 xset r rate 300 25

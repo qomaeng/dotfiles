@@ -131,9 +131,9 @@ awful.keyboard.append_global_keybindings({
 	end, { description = "pick client to add to tab group", group = "tabs" }),
 
 	--- Remove client from tabbed layout
-	awful.key({ alt }, "d", function()
-		bling.module.tabbed.pop()
-	end, { description = "remove focused client from tabbing group", group = "tabs" }),
+	-- awful.key({ alt }, "d", function()
+	-- 	bling.module.tabbed.pop()
+	-- end, { description = "remove focused client from tabbing group", group = "tabs" }),
 
 	--- Cycle through client in tabbed layout
 	awful.key({ alt }, "s", function()

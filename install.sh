@@ -1,11 +1,12 @@
 #!/bin/bash
 
-./install-fonts.sh || exit
-./asdf/install.sh || exit
-./install-zsh.sh || exit
-./install-nvim.sh || exit
-./tmux/install.sh || exit
-./xorg/install.sh || exit
-./alacritty/install.sh || exit
-./wallpapers/install.sh || exit
+set -e
+
+./install-fonts.sh
+./asdf/install.sh
+./install-zsh.sh
+./install-nvim.sh
+./tmux/install.sh
+./xorg/install.sh
+./wallpapers/install.sh
 
