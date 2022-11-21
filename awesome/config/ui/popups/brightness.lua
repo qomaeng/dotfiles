@@ -61,7 +61,7 @@ local bri_osd_slider = slider_osd.bri_osd_slider
 
 bri_osd_slider:connect_signal("property::value", function()
 	local brightness_level = bri_osd_slider:get_value()
-	awful.spawn("brightnessctl set " .. brightness_level .. "%", false)
+	awful.spawn("ddcutil setvcp 10 " .. brightness_level, false)
 
 	-- Update textbox widget text
 	osd_value.text = brightness_level .. "%"
@@ -139,7 +139,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 				right = dpi(24),
 				widget = wibox.container.margin,
 			},
-			bg = beautiful.xbackground,
+			bg = beautiful.black,
 			shape = gears.shape.rounded_rect,
 			widget = wibox.container.background,
 		},
@@ -173,12 +173,7 @@ end)
 local placement_placer = function()
 	local focused = awful.screen.focused()
 	local brightness_osd = focused.brightness_osd_overlay
-	awful.placement.next_to(brightness_osd, {
-		preferred_positions = "top",
-		preferred_anchors = "middle",
-		geometry = focused.bottom_panel or s,
-		offset = { x = 0, y = dpi(-20) },
-	})
+	awful.placement.centered(brightness_osd)
 end
 
 awesome.connect_signal("module::brightness_osd:show", function(bool)

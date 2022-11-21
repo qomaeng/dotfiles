@@ -100,5 +100,5 @@ xorg-xrdb
 youtube-dl
 yq
 zip
-xdotool
 xclip
+xdotool

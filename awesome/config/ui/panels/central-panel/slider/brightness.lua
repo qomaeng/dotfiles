@@ -54,7 +54,7 @@ local brightness_slider = slider.brightness_slider
 
 brightness_slider:connect_signal("property::value", function()
 	local brightness_level = brightness_slider:get_value()
-	awful.spawn("brightnessctl set " .. brightness_level .. "%", false)
+	awful.spawn("ddcutil setvpc 10 " .. brightness_level, false)
 
 	-- Update textbox widget text
 	osd_value.text = brightness_level .. "%"
@@ -82,7 +82,7 @@ brightness_slider:buttons(gears.table.join(
 
 local update_slider = function()
 	awful.spawn.easy_async_with_shell(
-		"brightnessctl | grep -i  'current' | awk '{ print $4}' | tr -d \"(%)\"",
+		"ddcutil getvpc 10 | grep -i  'current' | awk '{ print $9}' | tr -d ,",
 		function(stdout)
 			local value = string.gsub(stdout, "^%s*(.-)%s*$", "%1")
 			brightness_slider:set_value(tonumber(value))
