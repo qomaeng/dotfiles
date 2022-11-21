@@ -4,7 +4,7 @@ acpid
 acpi_call
 alacritty
 awesome-git
-aws-cli
+aws-cli-v2
 base
 bash
 bat
@@ -26,6 +26,7 @@ fzf
 gcc
 git
 gnupg
+go
 gpick
 gtk3
 gtk4
@@ -97,6 +98,7 @@ xorg-xinit
 xorg-xinput
 xorg-xrandr
 xorg-xrdb
+yarn
 youtube-dl
 yq
 zip

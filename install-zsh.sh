@@ -39,3 +39,4 @@ git_sync \
 
 res=$?; [ $res -ne 0 ] && exit $res
 
+exit $res
