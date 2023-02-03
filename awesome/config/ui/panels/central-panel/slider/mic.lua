@@ -54,7 +54,7 @@ local mic_slider = slider.mic_slider
 
 mic_slider:connect_signal("property::value", function()
 	local mic_level = mic_slider:get_value()
-	awful.spawn("amixer set Capture " .. mic_level .. "%", false)
+	awful.spawn("amixer sset Capture " .. mic_level .. "%", false)
 
 	-- Update textbox widget text
 	osd_value.text = mic_level .. "%"
@@ -66,14 +66,14 @@ mic_slider:buttons(gears.table.join(
 			mic_slider:set_value(100)
 			return
 		end
-		mic_slider:set_value(mic_slider:get_value() + 5)
+		mic_slider:set_value(mic_slider:get_value() + 1)
 	end),
 	awful.button({}, 5, nil, function()
 		if mic_slider:get_value() < 0 then
 			mic_slider:set_value(0)
 			return
 		end
-		mic_slider:set_value(mic_slider:get_value() - 5)
+		mic_slider:set_value(mic_slider:get_value() - 1)
 	end)
 ))
 

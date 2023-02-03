@@ -12,6 +12,7 @@ blueman
 bluez
 bluez-utils
 brightnessctl
+cmake
 curl
 dhcpcd
 discord

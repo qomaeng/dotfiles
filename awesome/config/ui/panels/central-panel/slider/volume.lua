@@ -54,7 +54,7 @@ local volume_slider = slider.volume_slider
 
 volume_slider:connect_signal("property::value", function()
 	local volume_level = volume_slider:get_value()
-	awful.spawn("amixer set Master " .. volume_level .. "%", false)
+	awful.spawn("amixer sset Master " .. volume_level .. "%", false)
 
 	-- Update textbox widget text
 	osd_value.text = volume_level .. "%"
@@ -69,14 +69,14 @@ volume_slider:buttons(gears.table.join(
 			volume_slider:set_value(100)
 			return
 		end
-		volume_slider:set_value(volume_slider:get_value() + 5)
+		volume_slider:set_value(volume_slider:get_value() + 1)
 	end),
 	awful.button({}, 5, nil, function()
 		if volume_slider:get_value() < 0 then
 			volume_slider:set_value(0)
 			return
 		end
-		volume_slider:set_value(volume_slider:get_value() - 5)
+		volume_slider:set_value(volume_slider:get_value() - 1)
 	end)
 ))
 
