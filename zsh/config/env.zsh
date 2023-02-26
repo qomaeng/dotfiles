@@ -11,7 +11,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export GPG_TTY="${TTY:-$(tty)}"
 
-export SUDO_PROMPT="passwd: "
+#export SUDO_PROMPT="passwd: "
 export TERMINAL="alacritty"
 export BROWSER="firefox"
 export VISUAL="nvim"
@@ -51,12 +51,12 @@ if [ $(echo $MANPAGER | awk '{print $1}') = nvim ]; then
 fi
 
 ## ibus-hangul
-local ostype=$(uname | tr '[:upper:]' '[:lower:]')
-if [ $ostype = 'linux' ]; then
-  export GTK_IM_MODULE=ibus
-  export XMODIFIERS=@im=ibus
-  export QT_IM_MODULE=ibus
-fi
+# local ostype=$(uname | tr '[:upper:]' '[:lower:]')
+# if [ $ostype = 'linux' ]; then
+#   export GTK_IM_MODULE=ibus
+#   export XMODIFIERS=@im=ibus
+#   export QT_IM_MODULE=ibus
+# fi
 
 ## fzf
 export FZF_DEFAULT_COMMAND='rg --files --hidden --column --line-number --no-heading --smart-case --glob "!.git/*"'

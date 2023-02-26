@@ -8,5 +8,5 @@ rust system
 terraform system
 yarn system
 
-java corretto-11.0.15.9.1
-maven latest
+/* java corretto-11.0.15.9.1 */
+/* maven latest */

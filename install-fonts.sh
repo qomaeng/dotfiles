@@ -18,3 +18,5 @@ res=$?; if [ $res -ne 0 ]; then
   exit $res
 fi
 
+fc-cache
+

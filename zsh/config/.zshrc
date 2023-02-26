@@ -6,8 +6,8 @@ env
 options
 keybinds
 oh-my-zsh
+prompt
 aliases
-startx
 EOF
 
 # vim:ft=zsh:nowrap
