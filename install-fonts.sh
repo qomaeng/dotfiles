@@ -1,4 +1,6 @@
-#!/usr/bin/env /bin/bash
+#!/usr/bin/env bash
+
+set -o nounset
 
 BASEDIR=$(dirname "$0")
 
@@ -8,13 +10,13 @@ printf ":: Installing fonts...\n"
 # Link fonts
 ######################################################################
 
-printf "(1/1) Linking \"$HOME/.local/share/fonts\" -> \"$BASEDIR/fonts\"\n"
+echo "(1/1) Linking \"$HOME/.local/share/fonts\" -> \"$BASEDIR/fonts\""
 
 rm -rf "$HOME/.local/share/fonts"
 
-errmsg=$(ln -srf "$BASEDIR/fonts" -t "$HOME/.local/share/" 2>&1 >/dev/null)
+errmsg=$(ln -srf "$BASEDIR/fonts" -t "$HOME/.local/share/" 2>&1)
 res=$?; if [ $res -ne 0 ]; then
-  printf "  -> failed: $errmsg\n"
+  echo "  -> failed: $errmsg"
   exit $res
 fi
 

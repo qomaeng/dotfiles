@@ -1,12 +1,12 @@
 #!/bin/bash
 
-set -e
+set -o errexit
+set -o nounset
 
 ./install-fonts.sh
-./asdf/install.sh
+./install-asdf.sh
 ./install-zsh.sh
 ./install-nvim.sh
-./tmux/install.sh
-./xorg/install.sh
-./wallpapers/install.sh
+./install-tmux.sh
+./install-wallpapers.sh
 

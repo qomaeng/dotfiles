@@ -1,42 +1,24 @@
-#!/usr/bin/env /bin/bash
+#!/usr/bin/env bash
+
+set -o nounset
 
 BASEDIR=$(dirname "$0")
 
-. "$BASEDIR/utils/git.sh"
-
-printf ":: Installing zsh pure theme...\n"
-
 ######################################################################
-# Git sync pure theme
+# Install LSP servers
 ######################################################################
 
-git_sync \
-  "$HOME/.zsh/pure" \
-  "https://github.com/sindresorhus/pure.git" \
-  "main"
+printf "Linking zsh environments...\n"
 
-res=$?; [ $res -ne 0 ] && exit $res
-
-######################################################################
-# Git sync zsh-autosuggestions
-######################################################################
-
-git_sync \
-  "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" \
-  "https://github.com/zsh-users/zsh-autosuggestions.git" \
-  "master"
-
-res=$?; [ $res -ne 0 ] && exit $res
-
-######################################################################
-# Git sync zsh-completions
-######################################################################
-
-git_sync \
-  "$HOME/.oh-my-zsh/custom/plugins/zsh-completions" \
-  "https://github.com/zsh-users/zsh-completions.git" \
-  "master"
-
-res=$?; [ $res -ne 0 ] && exit $res
-
-exit $res
+out=$(ln -srf "$BASEDIR/zsh/.zshenv" "$HOME/.zshenv" 2>&1)
+res=$?; if [ $res -ne 0 ]; then
+  echo "  -> failed: $out"
+  exit $res
+fi
+  
+out=$(ln -srf "$BASEDIR/zsh/config" "$HOME/.config/zsh" 2>&1)
+res=$?; if [ $res -ne 0 ]; then
+  echo "  -> failed: $out"
+  exit $res
+fi
+  
