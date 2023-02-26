@@ -1,7 +1,6 @@
 alacritty
 asdf-vm
 aws-cli-v2
-barrier
 base
 base-devel
 bat
