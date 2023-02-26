@@ -1,0 +1,12 @@
+awscli system
+golang system
+k9s system
+kubectl system
+nodejs system
+python system
+rust system
+terraform system
+yarn system
+
+/* java corretto-11.0.15.9.1 */
+/* maven latest */
