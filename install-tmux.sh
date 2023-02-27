@@ -4,7 +4,7 @@ set -o nounset
 
 BASEDIR=$(dirname "$0")
 
-printf ":: Installing tmux...\n"
+echo ":: Installing tmux..."
 
 ######################################################################
 # Link .zshrc

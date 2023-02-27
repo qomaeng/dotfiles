@@ -4,7 +4,7 @@ set -o nounset
 
 BASEDIR=$(dirname "$0")
 
-printf ":: Installing fonts...\n"
+echo ":: Installing fonts..."
 
 ######################################################################
 # Link fonts

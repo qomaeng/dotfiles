@@ -20,7 +20,7 @@ plugins=(
   yarn
 )
 
-printf "Installing asdf plugins...\n"
+echo "Installing asdf plugins..."
 
 for (( i=0; i<${#plugins[@]}; i++ )); do
   plugin_name=${plugins[$i]}
@@ -50,7 +50,7 @@ fi
 # Install packages using asdf
 ######################################################################
 
-printf "Installing packages using asdf...\n"
+echo "Installing packages using asdf..."
 
 for (( i=0; i<${#plugins[@]}; i++ )); do
   plugin_name=${plugins[$i]}

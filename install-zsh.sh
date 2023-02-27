@@ -4,7 +4,7 @@ set -o nounset
 
 BASEDIR=$(dirname "$0")
 
-printf "Linking zsh environments...\n"
+echo "Linking zsh environments..."
 
 out=$(ln -srf "$BASEDIR/zsh/.zshenv" "$HOME/.zshenv" 2>&1)
 res=$?; if [ $res -ne 0 ]; then
