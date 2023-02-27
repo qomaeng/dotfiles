@@ -4,10 +4,6 @@ set -o nounset
 
 BASEDIR=$(dirname "$0")
 
-######################################################################
-# Install LSP servers
-######################################################################
-
 printf "Linking zsh environments...\n"
 
 out=$(ln -srf "$BASEDIR/zsh/.zshenv" "$HOME/.zshenv" 2>&1)

@@ -50,6 +50,9 @@ if [ $(echo $MANPAGER | awk '{print $1}') = nvim ]; then
   export LESS_TERMCAP_us=$'\e[1;4;31m'
 fi
 
+# zsh history
+export HISTFILE=$HOME/.zsh_history
+
 ## ibus-hangul
 # local ostype=$(uname | tr '[:upper:]' '[:lower:]')
 # if [ $ostype = 'linux' ]; then
