@@ -2,7 +2,7 @@
 
 set -o nounset
 
-BASEDIR=$(dirname "$BASH_SOURCE[0]")
+BASEDIR=$(dirname "${BASH_SOURCE[0]}")
 
 ######################################################################
 # Add asdf plugins
@@ -39,7 +39,7 @@ done
 
 echo "Linking \"$HOME/.tool-versions\" -> \"$BASEDIR/asdf/.tool-versions\""
 
-errmsg=$(ln -srf "$BASEDIR/asdf/.tool-versions" -t "$HOME" 2>&1)
+errmsg=$(ln -srnf "$BASEDIR/asdf/.tool-versions" "$HOME/.tool-versions" 2>&1)
 res=$?; if [ $res -ne 0 ]; then
   echo "  -> failed: $errmsg"
   exit $res

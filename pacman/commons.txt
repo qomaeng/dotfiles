@@ -62,6 +62,7 @@ pipewire-alsa
 pipewire-audio
 pipewire-jack
 pipewire-pulse
+pq
 python
 python-attrs
 python-cffi

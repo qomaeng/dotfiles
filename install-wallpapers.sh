@@ -2,7 +2,7 @@
 
 set -o nounset
 
-BASEDIR=$(dirname "$BASH_SOURCE[0]")
+BASEDIR=$(dirname "${BASH_SOURCE[0]}")
 
 echo ":: Installing wallpapers..."
 
@@ -21,7 +21,7 @@ if [ ! -d "$HOME/Pictures" ]; then
   echo "  created directory: $HOME/Pictures"
 fi
 
-errmsg=$(ln -srf "$BASEDIR/wallpapers/Pictures/wallpapers" -t "$HOME/Pictures" 2>&1)
+errmsg=$(ln -srnf "$BASEDIR/wallpapers/Pictures/wallpapers" "$HOME/Pictures/wallpapers" 2>&1)
 res=$?; if [ $res -ne 0 ]; then
   echo "  -> failed: $errmsg"
   exit $res
