@@ -2,7 +2,7 @@
 
 set -o nounset
 
-BASEDIR=$(dirname "$0")
+BASEDIR=$(dirname "$BASH_SOURCE[0]")
 
 . "$BASEDIR/utils/git.sh"
 
@@ -33,7 +33,7 @@ fi
 # Link Nvim lua custom
 ######################################################################
 
-out=$(ln -srf nvim/lua/custom "$HOME/.config/nvim/lua/custom" 2>&1)
+out=$(ln -srf "$BASEDIR/nvim/lua/custom" "$HOME/.config/nvim/lua/custom" 2>&1)
 res=$?; if [ $res -ne 0 ]; then
   echo "  -> failed to link nvim lua custom"
   echo "     $out"

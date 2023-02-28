@@ -2,7 +2,7 @@
 
 set -o nounset
 
-BASEDIR=$(dirname "$0")
+BASEDIR=$(dirname "$BASH_SOURCE[0]")
 
 echo ":: Installing tmux..."
 
