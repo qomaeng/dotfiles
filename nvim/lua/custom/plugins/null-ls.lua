@@ -7,6 +7,10 @@ end
 local b = null_ls.builtins
 
 local sources = {
+  -- c
+  -- b.formatting.clang_format,
+  -- b.diagnostics.clang_check,
+
   -- rust
   b.formatting.rustfmt,
 

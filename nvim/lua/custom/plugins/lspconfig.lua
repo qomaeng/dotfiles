@@ -9,7 +9,8 @@ local servers = {
   "marksman",
   "rust_analyzer",
   "tsserver",
-  "yamlls"
+  "yamlls",
+  "clangd"
 }
 
 for _, lsp in ipairs(servers) do
