@@ -12,6 +12,7 @@ local servers = {
   "yamlls",
   "clangd",
   "taplo",
+  "terraformls",
 }
 
 for _, lsp in ipairs(servers) do

@@ -31,21 +31,50 @@ local sources = {
   }),
 
   -- python
-  b.formatting.black,
-  b.formatting.isort,
+  b.formatting.black.with {
+    prefer_local = ".venv/bin",
+  },
+  b.formatting.isort.with {
+    prefer_local = ".venv/bin",
+  },
+  b.diagnostics.flake8.with {
+    prefer_local = ".venv/bin",
+  },
+  b.diagnostics.mypy.with {
+    prefer_local = ".venv/bin",
+  },
+
+  -- terraform
+  b.formatting.terraform_fmt,
+  b.diagnostics.terraform_validate,
+  b.diagnostics.tfsec,
 
   -- webdev stuff
   b.formatting.prettier.with {
     filetype = { "html", "json", "markdown", "scss", "css", "typescript" },
+    prefer_local = "node_modules/.bin",
   },
-  b.diagnostics.eslint,
+  b.formatting.eslint.with {
+    filetype = { "html", "json", "markdown", "scss", "css", "typescript" },
+    prefer_local = "node_modules/.bin",
+  },
+  b.diagnostics.eslint.with {
+    filetype = { "html", "json", "markdown", "scss", "css", "typescript" },
+    prefer_local = "node_modules/.bin",
+  },
+  b.code_actions.eslint.with {
+    filetype = { "html", "json", "markdown", "scss", "css", "typescript" },
+    prefer_local = "node_modules/.bin",
+  },
 
   -- Lua
   b.formatting.stylua,
 
   -- Shell
   b.formatting.shfmt,
-  b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
+  b.diagnostics.shellcheck.with {
+    diagnostics_format = "#{m} [#{c}]"
+  },
 }
 
 null_ls.setup {
