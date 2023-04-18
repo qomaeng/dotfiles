@@ -18,6 +18,7 @@ plugins=(
   rust
   terraform
   yarn
+  poetry
 )
 
 echo "Installing asdf plugins..."
