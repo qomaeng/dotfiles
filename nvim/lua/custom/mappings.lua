@@ -6,7 +6,7 @@ M.general = {
   },
 
   n = {
-    ["f"] = { "<Plug>(easymotion-s2)", "Multi input find motion" }
+    ["f"] = { "<Plug>(easymotion-s2)", "Multi input find motion" },
   },
 }
 
@@ -28,6 +28,17 @@ M.lspconfig = {
         vim.diagnostic.goto_next()
       end,
       "goto_next",
+    },
+  },
+}
+
+M.crates = {
+  n = {
+    ["<leader>rcu"] = {
+      function()
+        require("crates").upgrade_all_crates()
+      end,
+      "update crates",
     },
   },
 }

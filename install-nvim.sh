@@ -15,7 +15,7 @@ echo ":: Installing nvim..."
 git_sync \
   "$HOME/.config/nvim" \
   "https://github.com/NvChad/NvChad.git" \
-  "main"
+  "v2.0"
 
 ######################################################################
 # Nvim plugins sync

@@ -7,7 +7,7 @@ local M = {}
 
 M.ui = {
   theme = "nord",
-  theme_toggle = { "falcon", "nord" }
+  theme_toggle = { "nord", "catppuccin" }
 }
 
 M.plugins  = "custom.plugins"
