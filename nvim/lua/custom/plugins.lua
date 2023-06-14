@@ -1,13 +1,14 @@
 local overrides = require("custom.configs.overrides")
 
 local plugins = {
+  -- Override NvChad Plugins
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "rust-analyzer",
-      },
-    },
+    opts = overrides.mason,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = overrides.treesitter,
   },
   {
     "neovim/nvim-lspconfig",
@@ -25,16 +26,43 @@ local plugins = {
     end,
   },
   {
+    "hrsh7th/nvim-cmp",
+    -- opts = overrides.cmp,
+    opts = function()
+      local cmp = require("cmp")
+      local M = require("plugins.configs.cmp")
+
+      table.insert(M.sources, { name = "crates" })
+
+      M.mapping["<Tab>"] = cmp.mapping.confirm({
+        behavior = cmp.ConfirmBehavior.Replace,
+        select = false,
+      })
+      M.mapping["<CR>"] = {}
+
+      return M
+    end,
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = overrides.nvimtree,
+  },
+
+  -- Install NvChad Plugins
+  {
+    "nathom/filetype.nvim",
+    overrides = {
+      extensions = {
+        tf = "terraform",
+        tfvars = "terraform-vars",
+        tfstate = "json",
+      },
+    },
+  },
+  {
     "easymotion/vim-easymotion",
     lazy = false,
   },
-  {
-    "hrsh7th/nvim-cmp",
-    opts = overrides.cmp,
-  },
-  -- {
-  --   "mfussenegger/nvim-dap"
-  -- },
   {
     "saecki/crates.nvim",
     dependencies = "hrsh7th/nvim-cmp",
@@ -45,14 +73,9 @@ local plugins = {
       crates.show()
     end,
   },
-  {
-    "hrsh7th/nvim-cmp",
-    opts = function()
-      local M = require("plugins.configs.cmp")
-      table.insert(M.sources, { name = "crates" })
-      return M
-    end,
-  },
+  -- {
+  --   "mfussenegger/nvim-dap"
+  -- },
 }
 
 return plugins

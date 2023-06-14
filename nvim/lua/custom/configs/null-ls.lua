@@ -1,22 +1,15 @@
-local present, null_ls = pcall(require, "null-ls")
-
-if not present then
-  return
-end
-
-local b = null_ls.builtins
+local null_ls = require("null-ls")
+local format = null_ls.builtins.formatting
+local lint = null_ls.builtins.diagnostics
+local code = null_ls.builtins.code_actions
 
 local sources = {
   -- c
-  b.formatting.clang_format.with({
-    filetype = { "c", "cpp", "objc" },
-  }),
-  b.diagnostics.clang_check.with({
-    filetype = { "c", "cpp", "objc" },
-  }),
+  format.clang_format.with({ filetype = { "c", "cpp", "objc" } }),
+  lint.clang_check.with({ filetype = { "c", "cpp", "objc" } }),
 
   -- rust
-  b.formatting.rustfmt.with({
+  format.rustfmt.with({
     extra_args = function(params)
       local Path = require("plenary.path")
       local cargo_toml = Path:new(params.root .. "/" .. "Cargo.toml")
@@ -35,57 +28,45 @@ local sources = {
   }),
 
   -- python
-  b.formatting.black.with({
-    prefer_local = ".venv/bin",
-  }),
-  b.formatting.isort.with({
-    prefer_local = ".venv/bin",
-  }),
-  b.diagnostics.flake8.with({
-    prefer_local = ".venv/bin",
-  }),
-  b.diagnostics.mypy.with({
-    prefer_local = ".venv/bin",
-  }),
-  b.diagnostics.pydocstyle.with({
-    prefer_local = ".venv/bin",
-  }),
+  format.black.with({ prefer_local = ".venv/bin" }),
+  format.isort.with({ prefer_local = ".venv/bin" }),
+  lint.flake8.with({ prefer_local = ".venv/bin" }),
+  lint.mypy.with({ prefer_local = ".venv/bin" }),
+  lint.pydocstyle.with({ prefer_local = ".venv/bin" }),
 
   -- terraform
-  b.formatting.terraform_fmt,
-  b.diagnostics.terraform_validate,
-  b.diagnostics.tfsec,
+  format.terraform_fmt,
+  lint.terraform_validate,
+  lint.tfsec,
 
   -- webdev stuff
-  b.formatting.prettier.with({
-    filetype = { "html", "json", "markdown", "scss", "css", "typescript" },
+  format.prettier.with({
+    filetype = { "html", "json", "markdown", "scss", "css", "javascript", "typescript" },
     prefer_local = "node_modules/.bin",
   }),
-  b.formatting.eslint.with({
-    filetype = { "html", "json", "markdown", "scss", "css", "typescript" },
+  format.eslint.with({
+    filetype = { "html", "json", "markdown", "scss", "css", "javascript", "typescript" },
     prefer_local = "node_modules/.bin",
   }),
-  b.diagnostics.eslint.with({
-    filetype = { "html", "json", "markdown", "scss", "css", "typescript" },
+  lint.eslint.with({
+    filetype = { "html", "json", "markdown", "scss", "css", "javascript", "typescript" },
     prefer_local = "node_modules/.bin",
   }),
-  b.code_actions.eslint.with({
-    filetype = { "html", "json", "markdown", "scss", "css", "typescript" },
+  code.eslint.with({
+    filetype = { "html", "json", "markdown", "scss", "css", "javascript", "typescript" },
     prefer_local = "node_modules/.bin",
   }),
 
   -- Lua
-  b.formatting.stylua,
+  format.stylua,
 
   -- Shell
-  b.formatting.shfmt,
-  b.diagnostics.shellcheck.with({
-    diagnostics_format = "#{m} [#{c}]",
-  }),
+  format.shfmt,
+  lint.shellcheck.with({ diagnostics_format = "#{m} [#{c}]" }),
 
   -- YAML
-  b.formatting.yamlfmt,
-  b.diagnostics.yamllint,
+  format.yamlfmt,
+  lint.yamllint,
 }
 
 null_ls.setup({

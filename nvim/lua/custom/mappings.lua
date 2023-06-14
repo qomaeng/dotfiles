@@ -32,6 +32,16 @@ M.lspconfig = {
   },
 }
 
+-- M.cmp = {
+--   n = {
+--     ["<Tab>"] = cmp.mapping.confirm({
+--       behavior = cmp.ConfirmBehavior.Replace,
+--       select = false,
+--     }),
+--     ["<CR>"] = {},
+--   }
+-- }
+
 M.crates = {
   n = {
     ["<leader>rcu"] = {

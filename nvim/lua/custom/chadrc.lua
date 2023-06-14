@@ -6,11 +6,11 @@ local M = {}
 -- example of changing theme:
 
 M.ui = {
-  theme = "nord",
-  theme_toggle = { "nord", "catppuccin" }
+  theme = "catppuccin",
+  theme_toggle = { "catppuccin", "nord" },
 }
 
-M.plugins  = "custom.plugins"
-M.mappings = require "custom.mappings"
+M.plugins = "custom.plugins"
+M.mappings = require("custom.mappings")
 
 return M
