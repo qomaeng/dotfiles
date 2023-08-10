@@ -1,16 +1,16 @@
--- Just an example, supposed to be placed in /lua/custom/
-
 local M = {}
 
--- make sure you maintain the structure of `core/default_config.lua` here,
--- example of changing theme:
+local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "catppuccin",
-  theme_toggle = { "catppuccin", "nord" },
+  theme = "nord",
+  theme_toggle = { "onedark", "nord" },
+
+  hl_override = highlights.override,
+  hl_add = highlights.add,
 }
 
 M.plugins = "custom.plugins"
-M.mappings = require("custom.mappings")
+M.mappings = require "custom.mappings"
 
 return M

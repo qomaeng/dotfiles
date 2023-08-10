@@ -7,7 +7,7 @@ python system
 terraform system
 yarn system
 poetry system
-rust 1.69.0
+rust 1.71.0
 tfsec 1.28.1
 
 /* java corretto-11.0.15.9.1 */

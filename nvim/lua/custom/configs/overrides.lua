@@ -1,6 +1,30 @@
 local M = {}
 
-local cmp = require("cmp")
+M.treesitter = {
+  ensure_installed = {
+    "c",
+    "css",
+    "html",
+    "javascript",
+    "lua",
+    "markdown",
+    "markdown_inline",
+    "python",
+    "query",
+    "rust",
+    "terraform",
+    "tsx",
+    "typescript",
+    "vim",
+    "vimdoc",
+  },
+  indent = {
+    enable = true,
+    -- disable = {
+    --   "python"
+    -- },
+  },
+}
 
 M.mason = {
   ensure_installed = {
@@ -23,39 +47,44 @@ M.mason = {
     "isort",
     "flake8",
     "black",
+    "pydocstyle",
 
     -- web dev stuff
     "css-lsp",
+    "deno",
     "html-lsp",
     "typescript-language-server",
     "prettier",
+
+    -- docker
+    "docker-compose-language-service",
+    "dockerfile-language-server",
+
+    -- golang
+    "gopls",
+
+    -- shell
+    "shellcheck",
+    "shfmt",
+
+    -- terraform
+    "terraform-ls",
+    "tflint",
+
+    -- Documents
+    "marksman",
+    "yaml-language-server",
+    "yamlfmt",
+    "yamllint",
   },
 }
 
-M.treesitter = {
-  ensure_installed = {
-    "c",
-    "css",
-    "html",
-    "javascript",
-    "lua",
-    "markdown",
-    "markdown_inline",
-    "python",
-    "query",
-    "rust",
-    "terraform",
-    "tsx",
-    "typescript",
-    "vim",
-    "vimdoc",
-  },
-}
-
+-- git support in nvimtree
 M.nvimtree = {
   git = {
     enable = true,
   },
+
   renderer = {
     highlight_git = true,
     icons = {

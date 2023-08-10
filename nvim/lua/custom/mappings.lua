@@ -2,10 +2,10 @@ local M = {}
 
 M.general = {
   i = {
-    ["jk"] = { "<ESC>", "leave insert mode" },
-  },
+    ["jk"] = { "<ESC>", "leave insert mode" }, },
 
   n = {
+    [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["f"] = { "<Plug>(easymotion-s2)", "Multi input find motion" },
   },
 }
@@ -14,9 +14,9 @@ M.tabufline = {
   n = {
     ["<C-x>"] = {
       function()
-        require("nvchad_ui.tabufline").close_buffer()
+        require("nvchad.tabufline").close_buffer()
       end,
-      "close buffer",
+      "Close buffer",
     },
   },
 }
