@@ -61,7 +61,7 @@ M.mason = {
     "dockerfile-language-server",
 
     -- golang
-    "gopls",
+    -- "gopls",
 
     -- shell
     "shellcheck",
