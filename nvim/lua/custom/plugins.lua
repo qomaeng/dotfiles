@@ -85,6 +85,18 @@ local plugins = {
       crates.show()
     end,
   },
+  {
+    "windwp/nvim-ts-autotag",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = function()
+      -- require("nvim-ts-autotag").setup({
+      --   filetypes = { "html", "xml", "jsx", "tsx", }
+      -- })
+      require("nvim-ts-autotag").setup()
+    end,
+    lazy = true,
+    event = "VeryLazy",
+  },
   -- {
   --   "mfussenegger/nvim-dap"
   -- },

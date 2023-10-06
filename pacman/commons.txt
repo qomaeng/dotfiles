@@ -88,6 +88,7 @@ ttf-baekmuk
 ttf-dejavu
 ttf-fira-sans
 ttf-jetbrains-mono
+ttf-jetbrains-mono-nerd
 ttf-ms-fonts
 ttf-nanum
 ttf-opensans

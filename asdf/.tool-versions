@@ -8,7 +8,7 @@ terraform system
 yarn system
 poetry system
 rust system
-tfsec 1.28.1
+tfsec 1.28.4
 
 /* java corretto-11.0.15.9.1 */
 /* maven latest */
