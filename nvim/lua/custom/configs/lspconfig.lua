@@ -19,7 +19,7 @@ local servers = {
   "terraformls",
   "tflint",
   "tsserver",
-  -- "yamlls",
+  "yamlls",
 }
 
 for _, lsp in ipairs(servers) do
