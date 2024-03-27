@@ -83,6 +83,7 @@ rust-analyzer
 switcheroo-control
 terraform
 tmux
+trivy
 ttf-baekmuk
 ttf-dejavu
 ttf-fira-sans

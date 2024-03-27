@@ -37,7 +37,6 @@ local sources = {
   -- terraform
   format.terraform_fmt,
   lint.terraform_validate,
-  lint.tfsec,
 
   -- webdev stuff
   format.prettier.with {

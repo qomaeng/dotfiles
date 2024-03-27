@@ -16,6 +16,7 @@ plugins=(
   nodejs
   python
   rust
+  trivy
   terraform
   yarn
   poetry

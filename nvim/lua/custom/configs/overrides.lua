@@ -73,6 +73,7 @@ M.mason = {
     -- terraform
     "terraform-ls",
     "tflint",
+    "trivy",
 
     -- Documents
     "marksman",
