@@ -8,7 +8,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
-alias ls='eza --color=auto --icons'
+alias ls='eza --color=auto --icons=always'
 # alias ls='ls --color=auto'
 alias l='ls -l'
 alias ll='ls -l'
