@@ -5,7 +5,6 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"

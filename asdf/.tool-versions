@@ -2,12 +2,12 @@ awscli system
 golang system
 k9s system
 kubectl system
-nodejs system
-python system
-terraform system
-yarn system
+nodejs 22.18.0
+pnpm 10.14.0
 poetry system
+python system
 rust system
+terraform system
 trivy system
 
 /* java corretto-11.0.15.9.1 */
