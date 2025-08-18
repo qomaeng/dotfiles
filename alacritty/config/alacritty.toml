@@ -10,7 +10,7 @@ history = 10000
 multiplier = 3
 
 [font]
-size = 10
+size = 11.5
 
 normal.family = "JetBrainsMono Nerd Font"
 normal.style = "Regular"
