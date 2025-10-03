@@ -27,6 +27,12 @@ bold_italic.style = "Bold Italic"
 [cursor]
 style = "Block"
 
+[keyboard]
+bindings = [
+  { key = "K", mods = "Alt|Shift", action = "ScrollHalfPageUp" },
+  { key = "J", mods = "Alt|Shift", action = "ScrollHalfPageDown" },
+]
+
 [colors]
 primary.background = "#22272e"
 primary.dim_foreground = "#a5abb6"
