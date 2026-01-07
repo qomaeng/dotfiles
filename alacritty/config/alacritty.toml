@@ -29,8 +29,8 @@ style = "Block"
 
 [keyboard]
 bindings = [
-  { key = "K", mods = "Alt|Shift", action = "ScrollHalfPageUp" },
-  { key = "J", mods = "Alt|Shift", action = "ScrollHalfPageDown" },
+  { key = "K", mods = "Control|Shift", action = "ScrollHalfPageUp" },
+  { key = "J", mods = "Control|Shift", action = "ScrollHalfPageDown" },
 ]
 
 [colors]
