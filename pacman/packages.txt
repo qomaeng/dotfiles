@@ -3,6 +3,7 @@ alacritty
 asdf-vm
 base
 base-devel
+bluez
 bluez-utils
 curl
 docker
@@ -48,9 +49,11 @@ nvtop
 oh-my-zsh-git
 openssh
 paru
-paru-debug
+pipewire
 pipewire-alsa
+pipewire-jack
 ripgrep
+rustup
 sccache
 seahorse
 sudo
@@ -59,6 +62,7 @@ ttf-jetbrains-mono-nerd
 ttf-nanum
 vim
 vim-devicons
+wireplumber
 xdg-user-dirs
 yq
 zip
