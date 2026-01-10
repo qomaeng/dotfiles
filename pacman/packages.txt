@@ -63,6 +63,7 @@ ttf-nanum
 vim
 vim-devicons
 wireplumber
+wl-clipboard
 xdg-user-dirs
 yq
 zip
