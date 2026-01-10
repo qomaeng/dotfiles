@@ -5,9 +5,12 @@ done <<-EOF
 env
 options
 keybinds
-oh-my-zsh
-prompt
+plugins/xdg
+plugins/gpg
+plugins/fzf
+plugins/man
+plugins/oh-my-zsh
+plugins/rust
+theme
 aliases
 EOF
-
-# vim:ft=zsh:nowrap

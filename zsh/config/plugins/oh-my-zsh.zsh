@@ -7,7 +7,6 @@ plugins=(
   asdf
   fzf
   rust
-  terraform
   zsh-autosuggestions
 )
 

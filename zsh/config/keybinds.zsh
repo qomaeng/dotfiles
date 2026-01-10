@@ -1,7 +1,3 @@
-##
-## Keybindings
-##
-
 # bindkey as emac
 bindkey -e
 
@@ -23,5 +19,3 @@ bindkey '^ ' autosuggest-accept
 #bindkey "^?" backward-delete-char
 #bindkey "^H" backward-delete-char
 #bindkey "^U" backward-kill-line
-
-# vim:ft=zsh:nowrap
