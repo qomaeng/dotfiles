@@ -1,4 +1,3 @@
-acpid
 alacritty
 asdf-vm
 base
