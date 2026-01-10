@@ -67,6 +67,5 @@ xdg-user-dirs
 yq
 zip
 zsh
-zsh-autocomplete
 zsh-autosuggestions
 zsh-pure-prompt
