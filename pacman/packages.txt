@@ -33,7 +33,7 @@ htop
 ibus
 ibus-hangul
 intel-ucode
-iptables-nft
+iptables
 jq
 lazygit
 linux
