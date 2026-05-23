@@ -4,7 +4,6 @@ ZSH_THEME=""
 
 zstyle ':omz:update' mode disabled
 plugins=(
-  asdf
   fzf
   rust
   zsh-autosuggestions
